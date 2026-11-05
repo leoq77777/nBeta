@@ -1,0 +1,12 @@
+group,key,label,value,unit,note,kept,d_logloss,seasons_better,folds,d_test
+core,prior_base_sd,Preseason prior SD,1.85,pts,Configured; not cross-validated,1,,,,
+core,process_drift_q,Per-game state variance,0.048,pts²,Configured; not cross-validated,1,,,,
+core,mov_cap,Score proxy soft cap,22.0,pts,Configured; not cross-validated,1,,,,
+core,student_t_df,Student-t degrees of freedom,7.5,df,Configured; not cross-validated,1,,,,
+core,base_game_sd,Baseline game standard deviation,12.35,pts,Configured; not cross-validated,1,,,,
+core,synergy_overload_eta,Injury overload penalty,0.085,scale,Configured; not cross-validated,1,,,,
+core,playoff_star_leverage,Playoff star multiplier,1.12,×,Configured; not cross-validated,1,,,,
+factor,home_court_advantage,Home court advantage,2.15,pts,Configured; not cross-validated,1,,,,
+factor,b2b_penalty,Back-to-back penalty,1.45,pts,Configured; not cross-validated,1,,,,
+factor,rest_diff_coeff,Rest differential,0.38,pts/day,Configured; not cross-validated,1,,,,
+factor,altitude_home_bonus,Altitude bonus,0.75,pts,Configured; not cross-validated,1,,,,

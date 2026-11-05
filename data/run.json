@@ -1,0 +1,23 @@
+[
+  {
+    "as_of": "2026-11-05T01:25:30+00:00",
+    "season": "2026–27",
+    "n_sims": 100000,
+    "games_played": 107,
+    "games_left": 1093,
+    "elo_per_point": 26.14,
+    "model_name": "n-Beta (Bayesian State-Space + Student-t)",
+    "student_t_df": 7.5,
+    "data_source": "local seed snapshot (unverified provenance)",
+    "injury_source": "seed",
+    "data_through": "2026-11-02",
+    "schedule_games": 1200,
+    "expected_schedule_games": 1230,
+    "missing_games": 30,
+    "audit_scope": "snapshot prequential; priors not independently validated",
+    "margin_method": "score proxy; no raw stints",
+    "player_split_method": "position prior; not measured O/D impact",
+    "market_source": "observed column only; missing values stay null",
+    "random_seed": 20261104
+  }
+]

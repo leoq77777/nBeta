@@ -1,0 +1,3787 @@
+{
+  "verified_at": "2026-11-05T01:42:21.877250+00:00",
+  "seed_as_of": "2026-11-03T05:58:45+00:00",
+  "season": "2026–27",
+  "upstream": {
+    "repository": "https://github.com/chronicaria/chronicaria.github.io",
+    "commit": "dc200d996eb9f7daa7790bad91c088d50821b65b",
+    "commit_date": "2026-11-03T05:58:59Z",
+    "file_matches": {
+      "teams.csv": {
+        "local_git_blob_sha": "1df087eca6192fba8b12fb28be3a8c4e3df9af3d",
+        "upstream_git_blob_sha": "1df087eca6192fba8b12fb28be3a8c4e3df9af3d",
+        "exact_match": true
+      },
+      "logos.json": {
+        "local_git_blob_sha": "880d8b3479e3f55ed40dec514c7c4ac4fb58b6ea",
+        "upstream_git_blob_sha": "8a5a2390a5ad14300c476b6e9f7bffc6b4757e43",
+        "exact_match": false
+      },
+      "history.csv": {
+        "local_git_blob_sha": "88bbb2adbffbf1cac6288869be457efbcb23f3d0",
+        "upstream_git_blob_sha": "88bbb2adbffbf1cac6288869be457efbcb23f3d0",
+        "exact_match": true
+      },
+      "run.csv": {
+        "local_git_blob_sha": "19147e3b5fe149266c802a1dd7ef7e8dcc846133",
+        "upstream_git_blob_sha": "19147e3b5fe149266c802a1dd7ef7e8dcc846133",
+        "exact_match": true
+      },
+      "schedule.csv": {
+        "local_git_blob_sha": "e3b74d2493da7f6559f55b529e0e46037837f6cc",
+        "upstream_git_blob_sha": "e3b74d2493da7f6559f55b529e0e46037837f6cc",
+        "exact_match": true
+      },
+      "players.csv": {
+        "local_git_blob_sha": "32cd9872bbce6fd89658d19a489d2af62b7e5e0a",
+        "upstream_git_blob_sha": "32cd9872bbce6fd89658d19a489d2af62b7e5e0a",
+        "exact_match": true
+      },
+      "win_dist.csv": {
+        "local_git_blob_sha": "dd82e4b2701ed16f12e718fbc42e10e39219e8d1",
+        "upstream_git_blob_sha": "dd82e4b2701ed16f12e718fbc42e10e39219e8d1",
+        "exact_match": true
+      }
+    },
+    "earliest_available_teams_commit": "2026-10-26T18:44:57Z",
+    "caveat": "Matching a published forecast export does not validate its priors, player value formula or historical availability."
+  },
+  "seed_hashes": {
+    "teams.csv": "00ee6153b196db216c99e5a8508503698498a3a84951cc3cf4e680d97d655480",
+    "logos.json": "a5649fceec3ae4dea3ee918bb79acdf02401e92ae22e6567a60b6e9f6a45d03d",
+    "history.csv": "5208d6d93f95fcac8840b59ba3c71e58906a4bc0f2eabefda76576b2302284bb",
+    "run.csv": "43223d095786f6029c52871a6ecca8d911cc178965e5eb98ea729dc9f442fa24",
+    "schedule.csv": "48785d2328e6afe951aad945297a01fb9f98e5cf71b33a87dc96e7fa79f28774",
+    "players.csv": "d59dc9f63466365d1f7891bffafd6dafef6f2a4f85e175d3e4700e0281b499d2",
+    "win_dist.csv": "0967ace183fc41170088dcb5fee2f85a28531782a81a32504876c552fa672533"
+  },
+  "internal": {
+    "teams": 30,
+    "games": 1200,
+    "final_games": 107,
+    "players": 484,
+    "history_rows": 450,
+    "unique_game_ids": 1200,
+    "unique_player_ids": 484,
+    "team_game_counts": {
+      "DET": 80,
+      "BOS": 80,
+      "NY": 80,
+      "PHI": 80,
+      "SA": 80,
+      "OKC": 80,
+      "ORL": 80,
+      "ATL": 80,
+      "WSH": 80,
+      "MIL": 80,
+      "MIA": 80,
+      "MIN": 80,
+      "BKN": 80,
+      "CHA": 80,
+      "TOR": 80,
+      "CHI": 80,
+      "MEM": 80,
+      "UTA": 80,
+      "NOP": 80,
+      "IND": 80,
+      "HOU": 80,
+      "DAL": 80,
+      "LAL": 80,
+      "GS": 80,
+      "POR": 80,
+      "PHX": 80,
+      "LAC": 80,
+      "SAC": 80,
+      "CLE": 80,
+      "DEN": 80
+    },
+    "et_date_errors": [],
+    "record_mismatches": [],
+    "metadata_games_left": 1123,
+    "listed_games_left": 1093,
+    "first_history_matches_prior": 30
+  },
+  "external": {
+    "fixtures_fetched": 1200,
+    "fixture_matches": 1200,
+    "final_score_matches": 107,
+    "fixture_mismatches": [],
+    "source_conflicts": [],
+    "tip_changes": [],
+    "completed_since_snapshot": [],
+    "identities_matched": 484,
+    "team_memberships_matched": 484,
+    "player_mismatches": [],
+    "boxscores_fetched": 107,
+    "missing_boxscores": [],
+    "player_gp_matches": 154,
+    "player_mpg_checked": 442,
+    "player_mpg_compatible": 258,
+    "player_stat_differences": [
+      {
+        "id": "4278039",
+        "name": "Nickeil Alexander-Walker",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 30.0,
+        "box_mpg": 30.125
+      },
+      {
+        "id": "4869342",
+        "name": "Dyson Daniels",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 28.9,
+        "box_mpg": 29.125
+      },
+      {
+        "id": "4431680",
+        "name": "Onyeka Okongwu",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 28.3,
+        "box_mpg": 28.875
+      },
+      {
+        "id": "2490149",
+        "name": "CJ McCollum",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 26.0,
+        "box_mpg": 26.75
+      },
+      {
+        "id": "4397183",
+        "name": "Aaron Wiggins",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 25.9,
+        "box_mpg": 25.625
+      },
+      {
+        "id": "4873201",
+        "name": "Asa Newell",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 9.3,
+        "box_mpg": 11.25
+      },
+      {
+        "id": "4397020",
+        "name": "Luguentz Dort",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 23.7,
+        "box_mpg": 24.625
+      },
+      {
+        "id": "4280151",
+        "name": "Corey Kispert",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 5.3,
+        "box_mpg": 8.5
+      },
+      {
+        "id": "5106262",
+        "name": "Zuby Ejiofor",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 4.5,
+        "box_mpg": 8.0
+      },
+      {
+        "id": "4278104",
+        "name": "Michael Porter Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.7,
+        "box_mpg": 32.429
+      },
+      {
+        "id": "3064514",
+        "name": "Julius Randle",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.8,
+        "box_mpg": 34.143
+      },
+      {
+        "id": "4432194",
+        "name": "Day'Ron Sharpe",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.7,
+        "box_mpg": 22.571
+      },
+      {
+        "id": "4702177",
+        "name": "Keon Ellis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.2,
+        "box_mpg": 24.286
+      },
+      {
+        "id": "5174655",
+        "name": "Chaney Johnson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.0,
+        "box_mpg": 22.857
+      },
+      {
+        "id": "3150844",
+        "name": "Moritz Wagner",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.5,
+        "box_mpg": 18.714
+      },
+      {
+        "id": "5101761",
+        "name": "Mikel Brown Jr.",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 22.8,
+        "box_mpg": 23.6
+      },
+      {
+        "id": "4687718",
+        "name": "Josh Minott",
+        "seed_gp": 3,
+        "box_gp": 5,
+        "seed_mpg": 11.0,
+        "box_mpg": 6.6
+      },
+      {
+        "id": "4712896",
+        "name": "Noah Clowney",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.0,
+        "box_mpg": 21.714
+      },
+      {
+        "id": "5279130",
+        "name": "Nolan Traore",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 21.0,
+        "box_mpg": 21.429
+      },
+      {
+        "id": "4066354",
+        "name": "Payton Pritchard",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.7,
+        "box_mpg": 28.0
+      },
+      {
+        "id": "4065648",
+        "name": "Jayson Tatum",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 35.7,
+        "box_mpg": 35.143
+      },
+      {
+        "id": "4397424",
+        "name": "Neemias Queta",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 20.8,
+        "box_mpg": 21.571
+      },
+      {
+        "id": "3078576",
+        "name": "Derrick White",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 30.0,
+        "box_mpg": 30.0
+      },
+      {
+        "id": "4065804",
+        "name": "Sam Hauser",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 20.2,
+        "box_mpg": 20.0
+      },
+      {
+        "id": "4351852",
+        "name": "Mitchell Robinson",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 20.0,
+        "box_mpg": 19.167
+      },
+      {
+        "id": "4593841",
+        "name": "Baylor Scheierman",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.5,
+        "box_mpg": 19.714
+      },
+      {
+        "id": "4277951",
+        "name": "Luka Garza",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 11.0,
+        "box_mpg": 12.0
+      },
+      {
+        "id": "4683689",
+        "name": "Jordan Walsh",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 16.5,
+        "box_mpg": 15.857
+      },
+      {
+        "id": "5175647",
+        "name": "Hugo Gonzalez",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 12.2,
+        "box_mpg": 12.714
+      },
+      {
+        "id": "3195",
+        "name": "Mike Conley",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 7.0,
+        "box_mpg": 5.5
+      },
+      {
+        "id": "4397251",
+        "name": "Ron Harper Jr.",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 5.0,
+        "box_mpg": 5.667
+      },
+      {
+        "id": "5142621",
+        "name": "Chris Cenac Jr.",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 3.5,
+        "box_mpg": 3.0
+      },
+      {
+        "id": "4433249",
+        "name": "Moussa Diabate",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 29.4,
+        "box_mpg": 28.75
+      },
+      {
+        "id": "3135045",
+        "name": "Grayson Allen",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 27.4,
+        "box_mpg": 26.375
+      },
+      {
+        "id": "4576060",
+        "name": "Ryan Kalkbrenner",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 16.6,
+        "box_mpg": 16.5
+      },
+      {
+        "id": "2583632",
+        "name": "Royce O'Neale",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 18.0,
+        "box_mpg": 18.0
+      },
+      {
+        "id": "4396971",
+        "name": "Naz Reid",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 29.1,
+        "box_mpg": 28.875
+      },
+      {
+        "id": "4433287",
+        "name": "Brandon Miller",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 34.1,
+        "box_mpg": 33.75
+      },
+      {
+        "id": "5211176",
+        "name": "Tidjane Salaun",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 13.7,
+        "box_mpg": 14.429
+      },
+      {
+        "id": "4602025",
+        "name": "Sion James",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 25.1,
+        "box_mpg": 24.625
+      },
+      {
+        "id": "3032979",
+        "name": "Dennis Schroder",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 32.4,
+        "box_mpg": 31.25
+      },
+      {
+        "id": "5060701",
+        "name": "Christian Anderson",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 10.6,
+        "box_mpg": 10.375
+      },
+      {
+        "id": "5239590",
+        "name": "Liam McNeeley",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 6.0,
+        "box_mpg": 6.75
+      },
+      {
+        "id": "5281370",
+        "name": "Hannes Steinbach",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 7.0,
+        "box_mpg": 7.667
+      },
+      {
+        "id": "2595516",
+        "name": "Norman Powell",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 30.0,
+        "box_mpg": 29.857
+      },
+      {
+        "id": "4395626",
+        "name": "Tre Jones",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.0,
+        "box_mpg": 18.143
+      },
+      {
+        "id": "4871145",
+        "name": "Josh Giddey",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.5,
+        "box_mpg": 27.286
+      },
+      {
+        "id": "4397189",
+        "name": "Jalen Smith",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.0,
+        "box_mpg": 24.571
+      },
+      {
+        "id": "4711294",
+        "name": "Matas Buzelis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 25.3,
+        "box_mpg": 25.0
+      },
+      {
+        "id": "5095151",
+        "name": "Caleb Wilson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 34.0,
+        "box_mpg": 34.0
+      },
+      {
+        "id": "5044385",
+        "name": "Leonard Miller",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.8,
+        "box_mpg": 17.429
+      },
+      {
+        "id": "4432822",
+        "name": "Isaac Okoro",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 17.8,
+        "box_mpg": 18.286
+      },
+      {
+        "id": "2990984",
+        "name": "Buddy Hield",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 14.0,
+        "box_mpg": 13.714
+      },
+      {
+        "id": "5105555",
+        "name": "Tobe Awaka",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 12.7,
+        "box_mpg": 10.0
+      },
+      {
+        "id": "4066650",
+        "name": "Zach Collins",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 7.0,
+        "box_mpg": 7.6
+      },
+      {
+        "id": "5242496",
+        "name": "Noa Essengue",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 13.8,
+        "box_mpg": 13.833
+      },
+      {
+        "id": "4898010",
+        "name": "Jaylin Sellers",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 9.7,
+        "box_mpg": 7.75
+      },
+      {
+        "id": "4683750",
+        "name": "Jordan Hawkins",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 6.5,
+        "box_mpg": 5.0
+      },
+      {
+        "id": "3908809",
+        "name": "Donovan Mitchell",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.7,
+        "box_mpg": 33.143
+      },
+      {
+        "id": "4432158",
+        "name": "Evan Mobley",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.8,
+        "box_mpg": 32.857
+      },
+      {
+        "id": "4066328",
+        "name": "Jarrett Allen",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.7,
+        "box_mpg": 27.714
+      },
+      {
+        "id": "3992",
+        "name": "James Harden",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.5,
+        "box_mpg": 33.429
+      },
+      {
+        "id": "4066757",
+        "name": "Sam Merrill",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 23.7,
+        "box_mpg": 24.0
+      },
+      {
+        "id": "5023693",
+        "name": "Tyrese Proctor",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 12.0,
+        "box_mpg": 13.167
+      },
+      {
+        "id": "2995706",
+        "name": "Mario Hezonja",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.0,
+        "box_mpg": 19.286
+      },
+      {
+        "id": "4701233",
+        "name": "Craig Porter Jr.",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 8.2,
+        "box_mpg": 8.2
+      },
+      {
+        "id": "5041951",
+        "name": "Meleek Thomas",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 20.7,
+        "box_mpg": 22.0
+      },
+      {
+        "id": "3934723",
+        "name": "Thomas Bryant",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 11.0,
+        "box_mpg": 8.0
+      },
+      {
+        "id": "5041939",
+        "name": "Cooper Flagg",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 32.4,
+        "box_mpg": 33.667
+      },
+      {
+        "id": "4278049",
+        "name": "Daniel Gafford",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 23.7,
+        "box_mpg": 24.0
+      },
+      {
+        "id": "4278594",
+        "name": "Naji Marshall",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 27.7,
+        "box_mpg": 26.75
+      },
+      {
+        "id": "4432582",
+        "name": "Max Christie",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.5,
+        "box_mpg": 23.857
+      },
+      {
+        "id": "5211175",
+        "name": "Zaccharie Risacher",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.7,
+        "box_mpg": 28.143
+      },
+      {
+        "id": "4278078",
+        "name": "P.J. Washington",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.7,
+        "box_mpg": 34.286
+      },
+      {
+        "id": "3138160",
+        "name": "Caleb Martin",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 19.5,
+        "box_mpg": 20.0
+      },
+      {
+        "id": "4432107",
+        "name": "Marcus Sasser",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.2,
+        "box_mpg": 19.143
+      },
+      {
+        "id": "4873153",
+        "name": "Morez Johnson Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.5,
+        "box_mpg": 15.714
+      },
+      {
+        "id": "4896372",
+        "name": "Walter Clayton Jr.",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 11.4,
+        "box_mpg": 13.5
+      },
+      {
+        "id": "5105806",
+        "name": "Jett Howard",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 3.5,
+        "box_mpg": 3.0
+      },
+      {
+        "id": "4701208",
+        "name": "Moussa Cisse",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 3.5,
+        "box_mpg": 3.2
+      },
+      {
+        "id": "5106040",
+        "name": "Tobi Lawal",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 2.7,
+        "box_mpg": 2.5
+      },
+      {
+        "id": "3112335",
+        "name": "Nikola Jokic",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 37.0,
+        "box_mpg": 36.833
+      },
+      {
+        "id": "3936299",
+        "name": "Jamal Murray",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 38.2,
+        "box_mpg": 38.333
+      },
+      {
+        "id": "3978",
+        "name": "DeMar DeRozan",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 26.2,
+        "box_mpg": 25.167
+      },
+      {
+        "id": "3064290",
+        "name": "Aaron Gordon",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 30.2,
+        "box_mpg": 30.167
+      },
+      {
+        "id": "4431767",
+        "name": "Christian Braun",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 36.0,
+        "box_mpg": 36.167
+      },
+      {
+        "id": "3138196",
+        "name": "Cameron Johnson",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 22.5,
+        "box_mpg": 26.333
+      },
+      {
+        "id": "4277848",
+        "name": "Marvin Bagley III",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 12.2,
+        "box_mpg": 12.167
+      },
+      {
+        "id": "4698719",
+        "name": "Trevon Brazile",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 22.8,
+        "box_mpg": 22.0
+      },
+      {
+        "id": "4065813",
+        "name": "Alpha Diallo",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 22.0,
+        "box_mpg": 14.0
+      },
+      {
+        "id": "3135046",
+        "name": "Tyus Jones",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 10.2,
+        "box_mpg": 9.833
+      },
+      {
+        "id": "4432166",
+        "name": "Cade Cunningham",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.5,
+        "box_mpg": 32.571
+      },
+      {
+        "id": "3157465",
+        "name": "Duncan Robinson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.8,
+        "box_mpg": 30.143
+      },
+      {
+        "id": "4278562",
+        "name": "Paul Reed",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.8,
+        "box_mpg": 27.0
+      },
+      {
+        "id": "4684742",
+        "name": "Ausar Thompson",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 26.4,
+        "box_mpg": 26.333
+      },
+      {
+        "id": "3908845",
+        "name": "John Collins",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.5,
+        "box_mpg": 25.429
+      },
+      {
+        "id": "2596112",
+        "name": "Javonte Green",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.8,
+        "box_mpg": 19.0
+      },
+      {
+        "id": "4066372",
+        "name": "Kevin Huerter",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 20.5,
+        "box_mpg": 20.429
+      },
+      {
+        "id": "5107199",
+        "name": "Daniss Jenkins",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.5,
+        "box_mpg": 24.286
+      },
+      {
+        "id": "4683771",
+        "name": "Ronald Holland II",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.7,
+        "box_mpg": 16.286
+      },
+      {
+        "id": "4397882",
+        "name": "Tolu Smith",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 3.0,
+        "box_mpg": 3.833
+      },
+      {
+        "id": "5107818",
+        "name": "Isaac Jones",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 3.0,
+        "box_mpg": 4.0
+      },
+      {
+        "id": "4700852",
+        "name": "Chaz Lanier",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 2.5,
+        "box_mpg": 4.0
+      },
+      {
+        "id": "5258459",
+        "name": "Ebuka Okorie",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 3.0,
+        "box_mpg": 3.75
+      },
+      {
+        "id": "3975",
+        "name": "Stephen Curry",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 28.2,
+        "box_mpg": 29.0
+      },
+      {
+        "id": "4709138",
+        "name": "Brandin Podziemski",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 33.6,
+        "box_mpg": 33.5
+      },
+      {
+        "id": "5175737",
+        "name": "Yaxel Lendeborg",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 32.3,
+        "box_mpg": 31.875
+      },
+      {
+        "id": "3134903",
+        "name": "Gary Payton II",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 13.0,
+        "box_mpg": 13.875
+      },
+      {
+        "id": "4066436",
+        "name": "De'Anthony Melton",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 22.3,
+        "box_mpg": 23.0
+      },
+      {
+        "id": "4897262",
+        "name": "Will Richard",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 16.4,
+        "box_mpg": 17.875
+      },
+      {
+        "id": "2990969",
+        "name": "Georges Niang",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 19.6,
+        "box_mpg": 19.875
+      },
+      {
+        "id": "6589",
+        "name": "Draymond Green",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 28.6,
+        "box_mpg": 26.667
+      },
+      {
+        "id": "4397886",
+        "name": "Charles Bassey",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 9.2,
+        "box_mpg": 11.5
+      },
+      {
+        "id": "4703396",
+        "name": "Graham Ike",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 11.8,
+        "box_mpg": 11.0
+      },
+      {
+        "id": "4433149",
+        "name": "LJ Cryer",
+        "seed_gp": 4,
+        "box_gp": 6,
+        "seed_mpg": 7.0,
+        "box_mpg": 4.833
+      },
+      {
+        "id": "4897449",
+        "name": "Malevy Leons",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 5.3,
+        "box_mpg": 4.0
+      },
+      {
+        "id": "3202",
+        "name": "Kevin Durant",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 33.7,
+        "box_mpg": 33.625
+      },
+      {
+        "id": "4684740",
+        "name": "Amen Thompson",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 33.7,
+        "box_mpg": 32.625
+      },
+      {
+        "id": "4871144",
+        "name": "Alperen Sengun",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 33.8,
+        "box_mpg": 34.5
+      },
+      {
+        "id": "4432639",
+        "name": "Jabari Smith Jr.",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 34.3,
+        "box_mpg": 34.5
+      },
+      {
+        "id": "2991230",
+        "name": "Fred VanVleet",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 30.6,
+        "box_mpg": 30.0
+      },
+      {
+        "id": "4711272",
+        "name": "Reed Sheppard",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 23.2,
+        "box_mpg": 22.0
+      },
+      {
+        "id": "2990992",
+        "name": "Marcus Smart",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 25.0,
+        "box_mpg": 24.0
+      },
+      {
+        "id": "4433192",
+        "name": "Tari Eason",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 24.3,
+        "box_mpg": 24.625
+      },
+      {
+        "id": "4432827",
+        "name": "Oscar Tshiebwe",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 9.7,
+        "box_mpg": 9.0
+      },
+      {
+        "id": "3037789",
+        "name": "Bogdan Bogdanovic",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 14.3,
+        "box_mpg": 13.125
+      },
+      {
+        "id": "4592857",
+        "name": "Isaiah Crawford",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 5.8,
+        "box_mpg": 5.167
+      },
+      {
+        "id": "3136777",
+        "name": "Jae'Sean Tate",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 2.8,
+        "box_mpg": 2.667
+      },
+      {
+        "id": "5105837",
+        "name": "Bruce Thornton",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 3.4,
+        "box_mpg": 3.167
+      },
+      {
+        "id": "4065731",
+        "name": "Jay Huff",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 16.8,
+        "box_mpg": 20.143
+      },
+      {
+        "id": "4592829",
+        "name": "Quenton Jackson",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 20.0,
+        "box_mpg": 21.875
+      },
+      {
+        "id": "4398207",
+        "name": "Jalen Slawson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 12.5,
+        "box_mpg": 16.571
+      },
+      {
+        "id": "5106060",
+        "name": "Jarace Walker",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 22.0,
+        "box_mpg": 24.875
+      },
+      {
+        "id": "4431752",
+        "name": "Kobe Brown",
+        "seed_gp": 3,
+        "box_gp": 5,
+        "seed_mpg": 12.0,
+        "box_mpg": 14.8
+      },
+      {
+        "id": "5105854",
+        "name": "Braden Smith",
+        "seed_gp": 3,
+        "box_gp": 5,
+        "seed_mpg": 6.0,
+        "box_mpg": 12.0
+      },
+      {
+        "id": "2991139",
+        "name": "Kris Dunn",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.8,
+        "box_mpg": 29.857
+      },
+      {
+        "id": "4396907",
+        "name": "Darius Garland",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.5,
+        "box_mpg": 33.0
+      },
+      {
+        "id": "3448",
+        "name": "Brook Lopez",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.0,
+        "box_mpg": 22.0
+      },
+      {
+        "id": "4432170",
+        "name": "Isaiah Jackson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 21.7,
+        "box_mpg": 22.286
+      },
+      {
+        "id": "4702352",
+        "name": "Kobe Sanders",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 23.2,
+        "box_mpg": 25.286
+      },
+      {
+        "id": "5254165",
+        "name": "Keaton Wagler",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 25.2,
+        "box_mpg": 25.0
+      },
+      {
+        "id": "5106258",
+        "name": "Gradey Dick",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 13.8,
+        "box_mpg": 16.0
+      },
+      {
+        "id": "5075626",
+        "name": "Baba Miller",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 7.8,
+        "box_mpg": 8.5
+      },
+      {
+        "id": "3945274",
+        "name": "Luka Doncic",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 35.7,
+        "box_mpg": 35.714
+      },
+      {
+        "id": "4066457",
+        "name": "Austin Reaves",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 36.0,
+        "box_mpg": 35.75
+      },
+      {
+        "id": "4278580",
+        "name": "Sandro Mamukelashvili",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 23.6,
+        "box_mpg": 24.125
+      },
+      {
+        "id": "4433136",
+        "name": "Walker Kessler",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 30.6,
+        "box_mpg": 30.75
+      },
+      {
+        "id": "3907498",
+        "name": "Matisse Thybulle",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 25.1,
+        "box_mpg": 24.375
+      },
+      {
+        "id": "4433137",
+        "name": "Ziaire Williams",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 28.5,
+        "box_mpg": 25.8
+      },
+      {
+        "id": "4397014",
+        "name": "Quentin Grimes",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 26.7,
+        "box_mpg": 26.25
+      },
+      {
+        "id": "4277811",
+        "name": "Collin Sexton",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 17.7,
+        "box_mpg": 17.429
+      },
+      {
+        "id": "4592691",
+        "name": "Jake LaRavia",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 23.3,
+        "box_mpg": 23.714
+      },
+      {
+        "id": "4278077",
+        "name": "Jarred Vanderbilt",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 15.3,
+        "box_mpg": 13.0
+      },
+      {
+        "id": "4868423",
+        "name": "Jaden Hardy",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 4.5,
+        "box_mpg": 3.8
+      },
+      {
+        "id": "4683774",
+        "name": "Bronny James",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 3.3,
+        "box_mpg": 2.75
+      },
+      {
+        "id": "5113969",
+        "name": "Cameron Carr",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 1.0,
+        "box_mpg": 1.0
+      },
+      {
+        "id": "4433083",
+        "name": "Cam Spencer",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.2,
+        "box_mpg": 19.143
+      },
+      {
+        "id": "4065733",
+        "name": "Ty Jerome",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 30.0,
+        "box_mpg": 31.167
+      },
+      {
+        "id": "4903027",
+        "name": "Cedric Coward",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 28.2,
+        "box_mpg": 28.667
+      },
+      {
+        "id": "4432810",
+        "name": "Isaiah Stewart",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 18.0,
+        "box_mpg": 19.667
+      },
+      {
+        "id": "5112087",
+        "name": "Jaylen Wells",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.2,
+        "box_mpg": 28.143
+      },
+      {
+        "id": "5041935",
+        "name": "Cameron Boozer",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.0,
+        "box_mpg": 32.0
+      },
+      {
+        "id": "2991070",
+        "name": "Jerami Grant",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.3,
+        "box_mpg": 24.286
+      },
+      {
+        "id": "4600663",
+        "name": "Zach Edey",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 20.2,
+        "box_mpg": 20.0
+      },
+      {
+        "id": "5105550",
+        "name": "GG Jackson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 17.0,
+        "box_mpg": 16.857
+      },
+      {
+        "id": "4594326",
+        "name": "Kris Murray",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 12.3,
+        "box_mpg": 14.0
+      },
+      {
+        "id": "4683934",
+        "name": "Jahmai Mashack",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 4.0,
+        "box_mpg": 2.0
+      },
+      {
+        "id": "3032977",
+        "name": "Giannis Antetokounmpo",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.5,
+        "box_mpg": 31.857
+      },
+      {
+        "id": "4066261",
+        "name": "Bam Adebayo",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.5,
+        "box_mpg": 31.429
+      },
+      {
+        "id": "4278053",
+        "name": "Davion Mitchell",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 34.2,
+        "box_mpg": 33.429
+      },
+      {
+        "id": "3059319",
+        "name": "Andrew Wiggins",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.3,
+        "box_mpg": 26.857
+      },
+      {
+        "id": "4601025",
+        "name": "Pelle Larsson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.7,
+        "box_mpg": 29.714
+      },
+      {
+        "id": "3064482",
+        "name": "Bobby Portis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.8,
+        "box_mpg": 22.143
+      },
+      {
+        "id": "2528210",
+        "name": "Tim Hardaway Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.3,
+        "box_mpg": 18.429
+      },
+      {
+        "id": "6475",
+        "name": "Klay Thompson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 20.8,
+        "box_mpg": 21.714
+      },
+      {
+        "id": "4066993",
+        "name": "Dru Smith",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 9.8,
+        "box_mpg": 10.0
+      },
+      {
+        "id": "4431772",
+        "name": "Myron Gardner",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 2.7,
+        "box_mpg": 2.25
+      },
+      {
+        "id": "5107157",
+        "name": "Ryan Conwell",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 4.2,
+        "box_mpg": 5.0
+      },
+      {
+        "id": "4997528",
+        "name": "Nikola Jovic",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 13.2,
+        "box_mpg": 12.167
+      },
+      {
+        "id": "4278076",
+        "name": "Nick Richards",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 2.7,
+        "box_mpg": 2.25
+      },
+      {
+        "id": "4395725",
+        "name": "Tyler Herro",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 30.2,
+        "box_mpg": 30.286
+      },
+      {
+        "id": "5105623",
+        "name": "Kel'el Ware",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.7,
+        "box_mpg": 19.286
+      },
+      {
+        "id": "4591725",
+        "name": "Ryan Rollins",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.3,
+        "box_mpg": 25.0
+      },
+      {
+        "id": "4432848",
+        "name": "Jaime Jaquez Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 28.0,
+        "box_mpg": 28.0
+      },
+      {
+        "id": "3133628",
+        "name": "Myles Turner",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.0,
+        "box_mpg": 26.714
+      },
+      {
+        "id": "3134907",
+        "name": "Kyle Kuzma",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.0,
+        "box_mpg": 26.286
+      },
+      {
+        "id": "4397475",
+        "name": "AJ Green",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.2,
+        "box_mpg": 19.857
+      },
+      {
+        "id": "5214640",
+        "name": "Kasparas Jakucionis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.5,
+        "box_mpg": 22.429
+      },
+      {
+        "id": "5082206",
+        "name": "Brayden Burries",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.8,
+        "box_mpg": 17.286
+      },
+      {
+        "id": "5164559",
+        "name": "Nate Ament",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 16.0,
+        "box_mpg": 14.4
+      },
+      {
+        "id": "4277922",
+        "name": "Jericho Sims",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 4.5,
+        "box_mpg": 8.0
+      },
+      {
+        "id": "4397002",
+        "name": "Ayo Dosunmu",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 29.3,
+        "box_mpg": 30.25
+      },
+      {
+        "id": "4431671",
+        "name": "Jaden McDaniels",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 33.4,
+        "box_mpg": 32.875
+      },
+      {
+        "id": "3032976",
+        "name": "Rudy Gobert",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 30.0,
+        "box_mpg": 30.143
+      },
+      {
+        "id": "4432816",
+        "name": "LaMelo Ball",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 25.3,
+        "box_mpg": 26.25
+      },
+      {
+        "id": "4433247",
+        "name": "Jonathan Kuminga",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 30.4,
+        "box_mpg": 30.75
+      },
+      {
+        "id": "5279133",
+        "name": "Joan Beringer",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 18.7,
+        "box_mpg": 18.125
+      },
+      {
+        "id": "4592492",
+        "name": "Bones Hyland",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 11.7,
+        "box_mpg": 12.0
+      },
+      {
+        "id": "3136196",
+        "name": "Trey Lyles",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 16.0,
+        "box_mpg": 16.625
+      },
+      {
+        "id": "4432247",
+        "name": "Jaylen Clark",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 9.2,
+        "box_mpg": 10.857
+      },
+      {
+        "id": "4895758",
+        "name": "Cody Williams",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 3.2,
+        "box_mpg": 4.0
+      },
+      {
+        "id": "4395628",
+        "name": "Zion Williamson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.8,
+        "box_mpg": 32.286
+      },
+      {
+        "id": "4397688",
+        "name": "Trey Murphy III",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.8,
+        "box_mpg": 33.0
+      },
+      {
+        "id": "4397136",
+        "name": "Saddiq Bey",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.5,
+        "box_mpg": 26.143
+      },
+      {
+        "id": "4997538",
+        "name": "Karlo Matkovic",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 16.2,
+        "box_mpg": 18.333
+      },
+      {
+        "id": "4869780",
+        "name": "Derik Queen",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 23.7,
+        "box_mpg": 23.714
+      },
+      {
+        "id": "4683634",
+        "name": "Bennedict Mathurin",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 17.5,
+        "box_mpg": 16.857
+      },
+      {
+        "id": "4576086",
+        "name": "Bryce McGowens",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 8.0,
+        "box_mpg": 7.5
+      },
+      {
+        "id": "4277813",
+        "name": "Herbert Jones",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 21.2,
+        "box_mpg": 22.143
+      },
+      {
+        "id": "4431675",
+        "name": "Trendon Watford",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 17.5,
+        "box_mpg": 17.0
+      },
+      {
+        "id": "5144091",
+        "name": "Jeremiah Fears",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 25.3,
+        "box_mpg": 27.143
+      },
+      {
+        "id": "3934719",
+        "name": "OG Anunoby",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.7,
+        "box_mpg": 34.286
+      },
+      {
+        "id": "3136195",
+        "name": "Karl-Anthony Towns",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.7,
+        "box_mpg": 32.143
+      },
+      {
+        "id": "3934672",
+        "name": "Jalen Brunson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 34.8,
+        "box_mpg": 34.714
+      },
+      {
+        "id": "3147657",
+        "name": "Mikal Bridges",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 27.5,
+        "box_mpg": 25.857
+      },
+      {
+        "id": "3062679",
+        "name": "Josh Hart",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.5,
+        "box_mpg": 31.714
+      },
+      {
+        "id": "3914044",
+        "name": "Landry Shamet",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.0,
+        "box_mpg": 24.857
+      },
+      {
+        "id": "4431823",
+        "name": "Miles McBride",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.7,
+        "box_mpg": 18.429
+      },
+      {
+        "id": "4277869",
+        "name": "Jose Alvarado",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 13.5,
+        "box_mpg": 12.0
+      },
+      {
+        "id": "6585",
+        "name": "Andre Drummond",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 13.2,
+        "box_mpg": 13.143
+      },
+      {
+        "id": "4433225",
+        "name": "Tyler Kolek",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 14.2,
+        "box_mpg": 12.4
+      },
+      {
+        "id": "2528426",
+        "name": "Jordan Clarkson",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 8.4,
+        "box_mpg": 8.833
+      },
+      {
+        "id": "5289900",
+        "name": "Mohamed Diawara",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 1.0,
+        "box_mpg": 3.5
+      },
+      {
+        "id": "4683730",
+        "name": "Jaden Akins",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 2.0,
+        "box_mpg": 1.0
+      },
+      {
+        "id": "4278073",
+        "name": "Shai Gilgeous-Alexander",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.7,
+        "box_mpg": 33.571
+      },
+      {
+        "id": "4900671",
+        "name": "Ajay Mitchell",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 25.5,
+        "box_mpg": 26.857
+      },
+      {
+        "id": "4222252",
+        "name": "Isaiah Hartenstein",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.0,
+        "box_mpg": 24.571
+      },
+      {
+        "id": "4432823",
+        "name": "Jaylin Williams",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.2,
+        "box_mpg": 18.429
+      },
+      {
+        "id": "3133626",
+        "name": "Kenrich Williams",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 13.7,
+        "box_mpg": 16.143
+      },
+      {
+        "id": "5174983",
+        "name": "Aday Mara",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.0,
+        "box_mpg": 18.286
+      },
+      {
+        "id": "5241364",
+        "name": "Bennett Stirtz",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.5,
+        "box_mpg": 15.0
+      },
+      {
+        "id": "4683778",
+        "name": "Jared McCain",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 24.7,
+        "box_mpg": 25.0
+      },
+      {
+        "id": "5105800",
+        "name": "Josh Dix",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 18.3,
+        "box_mpg": 16.75
+      },
+      {
+        "id": "4432185",
+        "name": "Micah Peavy",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 9.5,
+        "box_mpg": 11.667
+      },
+      {
+        "id": "4066320",
+        "name": "Desmond Bane",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 34.7,
+        "box_mpg": 34.857
+      },
+      {
+        "id": "4277847",
+        "name": "Wendell Carter Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.2,
+        "box_mpg": 32.429
+      },
+      {
+        "id": "4566434",
+        "name": "Franz Wagner",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 35.3,
+        "box_mpg": 35.714
+      },
+      {
+        "id": "4702382",
+        "name": "Tristan da Silva",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 28.8,
+        "box_mpg": 29.286
+      },
+      {
+        "id": "6478",
+        "name": "Nikola Vucevic",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 8.8,
+        "box_mpg": 9.571
+      },
+      {
+        "id": "5239561",
+        "name": "Jase Richardson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.7,
+        "box_mpg": 21.0
+      },
+      {
+        "id": "4278572",
+        "name": "Jamal Cain",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 14.8,
+        "box_mpg": 16.286
+      },
+      {
+        "id": "3133635",
+        "name": "Jevon Carter",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 17.5,
+        "box_mpg": 17.667
+      },
+      {
+        "id": "4593034",
+        "name": "Alex Morales",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 6.7,
+        "box_mpg": 8.5
+      },
+      {
+        "id": "4431678",
+        "name": "Tyrese Maxey",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 37.7,
+        "box_mpg": 37.5
+      },
+      {
+        "id": "1966",
+        "name": "LeBron James",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 33.4,
+        "box_mpg": 33.0
+      },
+      {
+        "id": "3059318",
+        "name": "Joel Embiid",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 35.0,
+        "box_mpg": 33.333
+      },
+      {
+        "id": "3917376",
+        "name": "Jaylen Brown",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 36.7,
+        "box_mpg": 36.143
+      },
+      {
+        "id": "3912848",
+        "name": "Dean Wade",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 27.8,
+        "box_mpg": 27.0
+      },
+      {
+        "id": "4351851",
+        "name": "Anfernee Simons",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 24.6,
+        "box_mpg": 24.5
+      },
+      {
+        "id": "5124612",
+        "name": "VJ Edgecombe",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.3,
+        "box_mpg": 33.286
+      },
+      {
+        "id": "2581018",
+        "name": "Kentavious Caldwell-Pope",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 24.3,
+        "box_mpg": 22.875
+      },
+      {
+        "id": "5105637",
+        "name": "Adem Bona",
+        "seed_gp": 7,
+        "box_gp": 8,
+        "seed_mpg": 14.1,
+        "box_mpg": 14.125
+      },
+      {
+        "id": "4432446",
+        "name": "Jabari Walker",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 9.5,
+        "box_mpg": 8.0
+      },
+      {
+        "id": "4873090",
+        "name": "Labaron Philon Jr.",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 8.2,
+        "box_mpg": 7.0
+      },
+      {
+        "id": "4711297",
+        "name": "Justin Edwards",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 1.5,
+        "box_mpg": 1.667
+      },
+      {
+        "id": "4066383",
+        "name": "Miles Bridges",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 32.8,
+        "box_mpg": 33.2
+      },
+      {
+        "id": "3136193",
+        "name": "Devin Booker",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 34.5,
+        "box_mpg": 34.6
+      },
+      {
+        "id": "4278585",
+        "name": "Collin Gillespie",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 26.2,
+        "box_mpg": 25.8
+      },
+      {
+        "id": "3913174",
+        "name": "Luke Kennard",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 15.3,
+        "box_mpg": 16.0
+      },
+      {
+        "id": "4278402",
+        "name": "Jordan Goodwin",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 21.0,
+        "box_mpg": 18.8
+      },
+      {
+        "id": "4601023",
+        "name": "Oso Ighodaro",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 18.0,
+        "box_mpg": 20.0
+      },
+      {
+        "id": "3155526",
+        "name": "Dillon Brooks",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 28.8,
+        "box_mpg": 29.8
+      },
+      {
+        "id": "4888725",
+        "name": "Ryan Dunn",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 13.0,
+        "box_mpg": 12.4
+      },
+      {
+        "id": "5203685",
+        "name": "Khaman Maluach",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 22.0,
+        "box_mpg": 20.2
+      },
+      {
+        "id": "4437244",
+        "name": "Jalen Green",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 26.8,
+        "box_mpg": 28.6
+      },
+      {
+        "id": "6606",
+        "name": "Damian Lillard",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 29.0,
+        "box_mpg": 29.167
+      },
+      {
+        "id": "4683021",
+        "name": "Deni Avdija",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 31.2,
+        "box_mpg": 31.833
+      },
+      {
+        "id": "5105565",
+        "name": "Donovan Clingan",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 22.4,
+        "box_mpg": 24.0
+      },
+      {
+        "id": "4066211",
+        "name": "Robert Williams III",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 17.0,
+        "box_mpg": 16.6
+      },
+      {
+        "id": "3995",
+        "name": "Jrue Holiday",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 24.6,
+        "box_mpg": 25.667
+      },
+      {
+        "id": "4431736",
+        "name": "Toumani Camara",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 26.2,
+        "box_mpg": 27.0
+      },
+      {
+        "id": "4578893",
+        "name": "Vit Krejci",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 11.6,
+        "box_mpg": 10.0
+      },
+      {
+        "id": "4683678",
+        "name": "Scoot Henderson",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 21.4,
+        "box_mpg": 22.167
+      },
+      {
+        "id": "4706557",
+        "name": "Chris Youngblood",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 7.0,
+        "box_mpg": 11.0
+      },
+      {
+        "id": "5081727",
+        "name": "Sidy Cissoko",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 21.8,
+        "box_mpg": 21.833
+      },
+      {
+        "id": "5104157",
+        "name": "Victor Wembanyama",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.5,
+        "box_mpg": 31.286
+      },
+      {
+        "id": "4066259",
+        "name": "De'Aaron Fox",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.0,
+        "box_mpg": 30.571
+      },
+      {
+        "id": "4592479",
+        "name": "Julian Champagnie",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 28.2,
+        "box_mpg": 27.286
+      },
+      {
+        "id": "5037871",
+        "name": "Dylan Harper",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.3,
+        "box_mpg": 32.429
+      },
+      {
+        "id": "4395630",
+        "name": "Devin Vassell",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.2,
+        "box_mpg": 31.143
+      },
+      {
+        "id": "4845367",
+        "name": "Stephon Castle",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.3,
+        "box_mpg": 28.857
+      },
+      {
+        "id": "4395723",
+        "name": "Keldon Johnson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.3,
+        "box_mpg": 23.0
+      },
+      {
+        "id": "3064560",
+        "name": "Luke Kornet",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 14.7,
+        "box_mpg": 15.0
+      },
+      {
+        "id": "6578",
+        "name": "Harrison Barnes",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 8.0,
+        "box_mpg": 10.6
+      },
+      {
+        "id": "5061568",
+        "name": "Carter Bryant",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 9.2,
+        "box_mpg": 9.857
+      },
+      {
+        "id": "3134916",
+        "name": "Jordan McLaughlin",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 5.0,
+        "box_mpg": 6.0
+      },
+      {
+        "id": "5105809",
+        "name": "Tarris Reed Jr.",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 4.3,
+        "box_mpg": 5.0
+      },
+      {
+        "id": "3155942",
+        "name": "Domantas Sabonis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 37.2,
+        "box_mpg": 36.286
+      },
+      {
+        "id": "3064440",
+        "name": "Zach LaVine",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 34.0,
+        "box_mpg": 33.143
+      },
+      {
+        "id": "4431679",
+        "name": "Precious Achiuwa",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.0,
+        "box_mpg": 28.714
+      },
+      {
+        "id": "5142620",
+        "name": "Darius Acuff Jr.",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 36.5,
+        "box_mpg": 36.571
+      },
+      {
+        "id": "4065732",
+        "name": "De'Andre Hunter",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.3,
+        "box_mpg": 30.286
+      },
+      {
+        "id": "4066262",
+        "name": "Malik Monk",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 11.8,
+        "box_mpg": 14.833
+      },
+      {
+        "id": "5106058",
+        "name": "Emanuel Sharp",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 17.8,
+        "box_mpg": 18.143
+      },
+      {
+        "id": "4279318",
+        "name": "Daeqwon Plowden",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 14.0,
+        "box_mpg": 12.167
+      },
+      {
+        "id": "4395650",
+        "name": "Leaky Black",
+        "seed_gp": 1,
+        "box_gp": 3,
+        "seed_mpg": 8.0,
+        "box_mpg": 11.0
+      },
+      {
+        "id": "4702384",
+        "name": "Nique Clifford",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 7.8,
+        "box_mpg": 7.0
+      },
+      {
+        "id": "4395724",
+        "name": "Immanuel Quickley",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 30.7,
+        "box_mpg": 31.714
+      },
+      {
+        "id": "4433134",
+        "name": "Scottie Barnes",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.8,
+        "box_mpg": 33.571
+      },
+      {
+        "id": "4684272",
+        "name": "Ja'Kobe Walter",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 28.5,
+        "box_mpg": 29.429
+      },
+      {
+        "id": "4395625",
+        "name": "RJ Barrett",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.7,
+        "box_mpg": 32.429
+      },
+      {
+        "id": "5093267",
+        "name": "Collin Murray-Boyles",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.2,
+        "box_mpg": 20.429
+      },
+      {
+        "id": "4432241",
+        "name": "Jamal Shead",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 22.0,
+        "box_mpg": 21.714
+      },
+      {
+        "id": "4431893",
+        "name": "Jamison Battle",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.3,
+        "box_mpg": 16.143
+      },
+      {
+        "id": "5149115",
+        "name": "Allen Graves",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 13.7,
+        "box_mpg": 12.714
+      },
+      {
+        "id": "2993874",
+        "name": "Kyle Anderson",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 6.2,
+        "box_mpg": 6.6
+      },
+      {
+        "id": "4431684",
+        "name": "Trayce Jackson-Davis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 7.8,
+        "box_mpg": 7.0
+      },
+      {
+        "id": "4702656",
+        "name": "Alijah Martin",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 6.8,
+        "box_mpg": 6.667
+      },
+      {
+        "id": "4433627",
+        "name": "Keyonte George",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 32.2,
+        "box_mpg": 30.714
+      },
+      {
+        "id": "4066336",
+        "name": "Lauri Markkanen",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 28.6,
+        "box_mpg": 29.0
+      },
+      {
+        "id": "4397077",
+        "name": "Jaxson Hayes",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 25.6,
+        "box_mpg": 25.0
+      },
+      {
+        "id": "4683766",
+        "name": "Isaiah Collier",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 18.7,
+        "box_mpg": 17.714
+      },
+      {
+        "id": "5105839",
+        "name": "Brice Sensabaugh",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 15.5,
+        "box_mpg": 15.286
+      },
+      {
+        "id": "3133602",
+        "name": "Svi Mykhailiuk",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 16.7,
+        "box_mpg": 16.286
+      },
+      {
+        "id": "5041955",
+        "name": "Darryn Peterson",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 29.8,
+        "box_mpg": 30.286
+      },
+      {
+        "id": "4873138",
+        "name": "Ace Bailey",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.0,
+        "box_mpg": 30.0
+      },
+      {
+        "id": "4684793",
+        "name": "Kyle Filipowski",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 7.8,
+        "box_mpg": 7.8
+      },
+      {
+        "id": "4277919",
+        "name": "Mo Bamba",
+        "seed_gp": 3,
+        "box_gp": 4,
+        "seed_mpg": 18.7,
+        "box_mpg": 18.5
+      },
+      {
+        "id": "4432811",
+        "name": "Josh Green",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 13.5,
+        "box_mpg": 13.8
+      },
+      {
+        "id": "4065663",
+        "name": "Josh Okogie",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 16.2,
+        "box_mpg": 16.667
+      },
+      {
+        "id": "4065673",
+        "name": "Tony Bradley",
+        "seed_gp": 1,
+        "box_gp": 2,
+        "seed_mpg": 6.0,
+        "box_mpg": 6.5
+      },
+      {
+        "id": "4277905",
+        "name": "Trae Young",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 36.5,
+        "box_mpg": 36.143
+      },
+      {
+        "id": "6583",
+        "name": "Anthony Davis",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 33.5,
+        "box_mpg": 33.571
+      },
+      {
+        "id": "4278129",
+        "name": "Deandre Ayton",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 14.3,
+        "box_mpg": 15.714
+      },
+      {
+        "id": "5104155",
+        "name": "Bilal Coulibaly",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 26.3,
+        "box_mpg": 27.286
+      },
+      {
+        "id": "5142718",
+        "name": "AJ Dybantsa",
+        "seed_gp": 2,
+        "box_gp": 3,
+        "seed_mpg": 28.5,
+        "box_mpg": 30.0
+      },
+      {
+        "id": "5174563",
+        "name": "Kyshawn George",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 31.7,
+        "box_mpg": 32.429
+      },
+      {
+        "id": "4845374",
+        "name": "Bub Carrington",
+        "seed_gp": 6,
+        "box_gp": 7,
+        "seed_mpg": 19.8,
+        "box_mpg": 19.714
+      },
+      {
+        "id": "5238230",
+        "name": "Tre Johnson",
+        "seed_gp": 5,
+        "box_gp": 6,
+        "seed_mpg": 20.8,
+        "box_mpg": 21.0
+      },
+      {
+        "id": "5144126",
+        "name": "Will Riley",
+        "seed_gp": 4,
+        "box_gp": 5,
+        "seed_mpg": 2.8,
+        "box_mpg": 3.0
+      }
+    ],
+    "fetch_failures": []
+  },
+  "not_verified": [
+    "preseason availability of rating_prior",
+    "bookmaker/timestamp provenance of vegas_total",
+    "player value formula or training data",
+    "historical injury status/probability/return-date snapshots",
+    "raw seed history ratings or seed model projections"
+  ],
+  "sources": [
+    {
+      "key": "schedule-okc",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:50.615208+00:00",
+      "file": "data/verification/schedule-okc.json.gz"
+    },
+    {
+      "key": "roster-okc",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:50.824390+00:00",
+      "file": "data/verification/roster-okc.json.gz"
+    },
+    {
+      "key": "schedule-sa",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:50.699754+00:00",
+      "file": "data/verification/schedule-sa.json.gz"
+    },
+    {
+      "key": "roster-sa",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:50.834164+00:00",
+      "file": "data/verification/roster-sa.json.gz"
+    },
+    {
+      "key": "schedule-det",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:50.673486+00:00",
+      "file": "data/verification/schedule-det.json.gz"
+    },
+    {
+      "key": "roster-det",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:50.873086+00:00",
+      "file": "data/verification/roster-det.json.gz"
+    },
+    {
+      "key": "schedule-hou",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:50.642418+00:00",
+      "file": "data/verification/schedule-hou.json.gz"
+    },
+    {
+      "key": "roster-hou",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:50.806486+00:00",
+      "file": "data/verification/roster-hou.json.gz"
+    },
+    {
+      "key": "schedule-phi",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:50.990360+00:00",
+      "file": "data/verification/schedule-phi.json.gz"
+    },
+    {
+      "key": "roster-phi",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.170645+00:00",
+      "file": "data/verification/roster-phi.json.gz"
+    },
+    {
+      "key": "schedule-min",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.087125+00:00",
+      "file": "data/verification/schedule-min.json.gz"
+    },
+    {
+      "key": "roster-min",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.251196+00:00",
+      "file": "data/verification/roster-min.json.gz"
+    },
+    {
+      "key": "schedule-bos",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.014740+00:00",
+      "file": "data/verification/schedule-bos.json.gz"
+    },
+    {
+      "key": "roster-bos",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.167158+00:00",
+      "file": "data/verification/roster-bos.json.gz"
+    },
+    {
+      "key": "schedule-ny",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.104545+00:00",
+      "file": "data/verification/schedule-ny.json.gz"
+    },
+    {
+      "key": "roster-ny",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.243440+00:00",
+      "file": "data/verification/roster-ny.json.gz"
+    },
+    {
+      "key": "schedule-tor",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.338236+00:00",
+      "file": "data/verification/schedule-tor.json.gz"
+    },
+    {
+      "key": "roster-tor",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.522030+00:00",
+      "file": "data/verification/roster-tor.json.gz"
+    },
+    {
+      "key": "schedule-lal",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.362487+00:00",
+      "file": "data/verification/schedule-lal.json.gz"
+    },
+    {
+      "key": "roster-lal",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.527743+00:00",
+      "file": "data/verification/roster-lal.json.gz"
+    },
+    {
+      "key": "schedule-cle",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.416608+00:00",
+      "file": "data/verification/schedule-cle.json.gz"
+    },
+    {
+      "key": "roster-cle",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.580185+00:00",
+      "file": "data/verification/roster-cle.json.gz"
+    },
+    {
+      "key": "schedule-por",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.432548+00:00",
+      "file": "data/verification/schedule-por.json.gz"
+    },
+    {
+      "key": "roster-por",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.622288+00:00",
+      "file": "data/verification/roster-por.json.gz"
+    },
+    {
+      "key": "schedule-den",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.692026+00:00",
+      "file": "data/verification/schedule-den.json.gz"
+    },
+    {
+      "key": "roster-den",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.885949+00:00",
+      "file": "data/verification/roster-den.json.gz"
+    },
+    {
+      "key": "schedule-atl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.727235+00:00",
+      "file": "data/verification/schedule-atl.json.gz"
+    },
+    {
+      "key": "roster-atl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.898343+00:00",
+      "file": "data/verification/roster-atl.json.gz"
+    },
+    {
+      "key": "schedule-mia",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.775957+00:00",
+      "file": "data/verification/schedule-mia.json.gz"
+    },
+    {
+      "key": "roster-mia",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.945572+00:00",
+      "file": "data/verification/roster-mia.json.gz"
+    },
+    {
+      "key": "schedule-ind",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:51.804667+00:00",
+      "file": "data/verification/schedule-ind.json.gz"
+    },
+    {
+      "key": "roster-ind",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:51.949661+00:00",
+      "file": "data/verification/roster-ind.json.gz"
+    },
+    {
+      "key": "schedule-orl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.108998+00:00",
+      "file": "data/verification/schedule-orl.json.gz"
+    },
+    {
+      "key": "roster-orl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.305170+00:00",
+      "file": "data/verification/roster-orl.json.gz"
+    },
+    {
+      "key": "schedule-gs",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.079801+00:00",
+      "file": "data/verification/schedule-gs.json.gz"
+    },
+    {
+      "key": "roster-gs",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.259595+00:00",
+      "file": "data/verification/roster-gs.json.gz"
+    },
+    {
+      "key": "schedule-phx",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.140086+00:00",
+      "file": "data/verification/schedule-phx.json.gz"
+    },
+    {
+      "key": "roster-phx",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.319471+00:00",
+      "file": "data/verification/roster-phx.json.gz"
+    },
+    {
+      "key": "schedule-wsh",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.166213+00:00",
+      "file": "data/verification/schedule-wsh.json.gz"
+    },
+    {
+      "key": "roster-wsh",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.309062+00:00",
+      "file": "data/verification/roster-wsh.json.gz"
+    },
+    {
+      "key": "schedule-dal",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.412729+00:00",
+      "file": "data/verification/schedule-dal.json.gz"
+    },
+    {
+      "key": "roster-dal",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.597724+00:00",
+      "file": "data/verification/roster-dal.json.gz"
+    },
+    {
+      "key": "schedule-mem",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.515098+00:00",
+      "file": "data/verification/schedule-mem.json.gz"
+    },
+    {
+      "key": "roster-mem",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.738924+00:00",
+      "file": "data/verification/roster-mem.json.gz"
+    },
+    {
+      "key": "schedule-cha",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.518830+00:00",
+      "file": "data/verification/schedule-cha.json.gz"
+    },
+    {
+      "key": "roster-cha",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.739493+00:00",
+      "file": "data/verification/roster-cha.json.gz"
+    },
+    {
+      "key": "schedule-utah",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.528436+00:00",
+      "file": "data/verification/schedule-utah.json.gz"
+    },
+    {
+      "key": "roster-utah",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.747102+00:00",
+      "file": "data/verification/roster-utah.json.gz"
+    },
+    {
+      "key": "schedule-no",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.792883+00:00",
+      "file": "data/verification/schedule-no.json.gz"
+    },
+    {
+      "key": "roster-no",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:52.942825+00:00",
+      "file": "data/verification/roster-no.json.gz"
+    },
+    {
+      "key": "schedule-chi",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.949337+00:00",
+      "file": "data/verification/schedule-chi.json.gz"
+    },
+    {
+      "key": "roster-chi",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:53.114322+00:00",
+      "file": "data/verification/roster-chi.json.gz"
+    },
+    {
+      "key": "schedule-lac",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.990586+00:00",
+      "file": "data/verification/schedule-lac.json.gz"
+    },
+    {
+      "key": "roster-lac",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:53.131995+00:00",
+      "file": "data/verification/roster-lac.json.gz"
+    },
+    {
+      "key": "schedule-bkn",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:52.923071+00:00",
+      "file": "data/verification/schedule-bkn.json.gz"
+    },
+    {
+      "key": "roster-bkn",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:53.141938+00:00",
+      "file": "data/verification/roster-bkn.json.gz"
+    },
+    {
+      "key": "schedule-mil",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:53.165619+00:00",
+      "file": "data/verification/schedule-mil.json.gz"
+    },
+    {
+      "key": "roster-mil",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:53.329562+00:00",
+      "file": "data/verification/roster-mil.json.gz"
+    },
+    {
+      "key": "schedule-sac",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/schedule?season=2027&seasontype=2",
+      "fetched_at": "2026-11-05T01:35:53.296415+00:00",
+      "file": "data/verification/schedule-sac.json.gz"
+    },
+    {
+      "key": "roster-sac",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster?season=2027",
+      "fetched_at": "2026-11-05T01:35:53.444618+00:00",
+      "file": "data/verification/roster-sac.json.gz"
+    },
+    {
+      "key": "box-401909088",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909088",
+      "fetched_at": "2026-11-05T01:37:29.834916+00:00",
+      "file": "data/verification/box-401909088.json.gz"
+    },
+    {
+      "key": "box-401909089",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909089",
+      "fetched_at": "2026-11-05T01:37:29.901287+00:00",
+      "file": "data/verification/box-401909089.json.gz"
+    },
+    {
+      "key": "box-401909090",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909090",
+      "fetched_at": "2026-11-05T01:37:29.859265+00:00",
+      "file": "data/verification/box-401909090.json.gz"
+    },
+    {
+      "key": "box-401909834",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909834",
+      "fetched_at": "2026-11-05T01:37:29.920489+00:00",
+      "file": "data/verification/box-401909834.json.gz"
+    },
+    {
+      "key": "box-401909835",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909835",
+      "fetched_at": "2026-11-05T01:37:30.016318+00:00",
+      "file": "data/verification/box-401909835.json.gz"
+    },
+    {
+      "key": "box-401909091",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909091",
+      "fetched_at": "2026-11-05T01:37:30.148559+00:00",
+      "file": "data/verification/box-401909091.json.gz"
+    },
+    {
+      "key": "box-401909836",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909836",
+      "fetched_at": "2026-11-05T01:37:30.078665+00:00",
+      "file": "data/verification/box-401909836.json.gz"
+    },
+    {
+      "key": "box-401909837",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909837",
+      "fetched_at": "2026-11-05T01:37:30.114511+00:00",
+      "file": "data/verification/box-401909837.json.gz"
+    },
+    {
+      "key": "box-401909838",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909838",
+      "fetched_at": "2026-11-05T01:37:30.209700+00:00",
+      "file": "data/verification/box-401909838.json.gz"
+    },
+    {
+      "key": "box-401909839",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909839",
+      "fetched_at": "2026-11-05T01:37:30.250649+00:00",
+      "file": "data/verification/box-401909839.json.gz"
+    },
+    {
+      "key": "box-401909840",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909840",
+      "fetched_at": "2026-11-05T01:37:30.387604+00:00",
+      "file": "data/verification/box-401909840.json.gz"
+    },
+    {
+      "key": "box-401909092",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909092",
+      "fetched_at": "2026-11-05T01:37:30.327570+00:00",
+      "file": "data/verification/box-401909092.json.gz"
+    },
+    {
+      "key": "box-401909841",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909841",
+      "fetched_at": "2026-11-05T01:37:30.405395+00:00",
+      "file": "data/verification/box-401909841.json.gz"
+    },
+    {
+      "key": "box-401909842",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909842",
+      "fetched_at": "2026-11-05T01:37:30.430231+00:00",
+      "file": "data/verification/box-401909842.json.gz"
+    },
+    {
+      "key": "box-401909093",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909093",
+      "fetched_at": "2026-11-05T01:37:30.509843+00:00",
+      "file": "data/verification/box-401909093.json.gz"
+    },
+    {
+      "key": "box-401909094",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909094",
+      "fetched_at": "2026-11-05T01:37:30.574070+00:00",
+      "file": "data/verification/box-401909094.json.gz"
+    },
+    {
+      "key": "box-401909848",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909848",
+      "fetched_at": "2026-11-05T01:37:30.557496+00:00",
+      "file": "data/verification/box-401909848.json.gz"
+    },
+    {
+      "key": "box-401909095",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909095",
+      "fetched_at": "2026-11-05T01:37:30.609249+00:00",
+      "file": "data/verification/box-401909095.json.gz"
+    },
+    {
+      "key": "box-401909843",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909843",
+      "fetched_at": "2026-11-05T01:37:30.669316+00:00",
+      "file": "data/verification/box-401909843.json.gz"
+    },
+    {
+      "key": "box-401909844",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909844",
+      "fetched_at": "2026-11-05T01:37:30.777808+00:00",
+      "file": "data/verification/box-401909844.json.gz"
+    },
+    {
+      "key": "box-401909845",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909845",
+      "fetched_at": "2026-11-05T01:37:30.750510+00:00",
+      "file": "data/verification/box-401909845.json.gz"
+    },
+    {
+      "key": "box-401909846",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909846",
+      "fetched_at": "2026-11-05T01:37:30.775263+00:00",
+      "file": "data/verification/box-401909846.json.gz"
+    },
+    {
+      "key": "box-401909847",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909847",
+      "fetched_at": "2026-11-05T01:37:30.825730+00:00",
+      "file": "data/verification/box-401909847.json.gz"
+    },
+    {
+      "key": "box-401909096",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909096",
+      "fetched_at": "2026-11-05T01:37:30.964138+00:00",
+      "file": "data/verification/box-401909096.json.gz"
+    },
+    {
+      "key": "box-401909849",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909849",
+      "fetched_at": "2026-11-05T01:37:31.024720+00:00",
+      "file": "data/verification/box-401909849.json.gz"
+    },
+    {
+      "key": "box-401909850",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909850",
+      "fetched_at": "2026-11-05T01:37:30.996516+00:00",
+      "file": "data/verification/box-401909850.json.gz"
+    },
+    {
+      "key": "box-401909851",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909851",
+      "fetched_at": "2026-11-05T01:37:31.068377+00:00",
+      "file": "data/verification/box-401909851.json.gz"
+    },
+    {
+      "key": "box-401909852",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909852",
+      "fetched_at": "2026-11-05T01:37:31.167763+00:00",
+      "file": "data/verification/box-401909852.json.gz"
+    },
+    {
+      "key": "box-401909853",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909853",
+      "fetched_at": "2026-11-05T01:37:31.213636+00:00",
+      "file": "data/verification/box-401909853.json.gz"
+    },
+    {
+      "key": "box-401909854",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909854",
+      "fetched_at": "2026-11-05T01:37:31.196530+00:00",
+      "file": "data/verification/box-401909854.json.gz"
+    },
+    {
+      "key": "box-401909855",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909855",
+      "fetched_at": "2026-11-05T01:37:31.228794+00:00",
+      "file": "data/verification/box-401909855.json.gz"
+    },
+    {
+      "key": "box-401909857",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909857",
+      "fetched_at": "2026-11-05T01:37:31.362738+00:00",
+      "file": "data/verification/box-401909857.json.gz"
+    },
+    {
+      "key": "box-401909858",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909858",
+      "fetched_at": "2026-11-05T01:37:31.372228+00:00",
+      "file": "data/verification/box-401909858.json.gz"
+    },
+    {
+      "key": "box-401909856",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909856",
+      "fetched_at": "2026-11-05T01:37:31.403274+00:00",
+      "file": "data/verification/box-401909856.json.gz"
+    },
+    {
+      "key": "box-401909859",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909859",
+      "fetched_at": "2026-11-05T01:37:31.405801+00:00",
+      "file": "data/verification/box-401909859.json.gz"
+    },
+    {
+      "key": "box-401909860",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909860",
+      "fetched_at": "2026-11-05T01:37:31.597531+00:00",
+      "file": "data/verification/box-401909860.json.gz"
+    },
+    {
+      "key": "box-401909861",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909861",
+      "fetched_at": "2026-11-05T01:37:31.594848+00:00",
+      "file": "data/verification/box-401909861.json.gz"
+    },
+    {
+      "key": "box-401909862",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909862",
+      "fetched_at": "2026-11-05T01:37:31.653606+00:00",
+      "file": "data/verification/box-401909862.json.gz"
+    },
+    {
+      "key": "box-401909863",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909863",
+      "fetched_at": "2026-11-05T01:37:31.558610+00:00",
+      "file": "data/verification/box-401909863.json.gz"
+    },
+    {
+      "key": "box-401909864",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909864",
+      "fetched_at": "2026-11-05T01:37:31.730631+00:00",
+      "file": "data/verification/box-401909864.json.gz"
+    },
+    {
+      "key": "box-401909865",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909865",
+      "fetched_at": "2026-11-05T01:37:31.771955+00:00",
+      "file": "data/verification/box-401909865.json.gz"
+    },
+    {
+      "key": "box-401909866",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909866",
+      "fetched_at": "2026-11-05T01:37:31.756064+00:00",
+      "file": "data/verification/box-401909866.json.gz"
+    },
+    {
+      "key": "box-401909867",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909867",
+      "fetched_at": "2026-11-05T01:37:31.828379+00:00",
+      "file": "data/verification/box-401909867.json.gz"
+    },
+    {
+      "key": "box-401909868",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909868",
+      "fetched_at": "2026-11-05T01:37:31.924803+00:00",
+      "file": "data/verification/box-401909868.json.gz"
+    },
+    {
+      "key": "box-401909869",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909869",
+      "fetched_at": "2026-11-05T01:37:31.986567+00:00",
+      "file": "data/verification/box-401909869.json.gz"
+    },
+    {
+      "key": "box-401909870",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909870",
+      "fetched_at": "2026-11-05T01:37:31.928199+00:00",
+      "file": "data/verification/box-401909870.json.gz"
+    },
+    {
+      "key": "box-401909871",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909871",
+      "fetched_at": "2026-11-05T01:37:32.003515+00:00",
+      "file": "data/verification/box-401909871.json.gz"
+    },
+    {
+      "key": "box-401909872",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909872",
+      "fetched_at": "2026-11-05T01:37:32.225812+00:00",
+      "file": "data/verification/box-401909872.json.gz"
+    },
+    {
+      "key": "box-401909873",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909873",
+      "fetched_at": "2026-11-05T01:37:32.095762+00:00",
+      "file": "data/verification/box-401909873.json.gz"
+    },
+    {
+      "key": "box-401909874",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909874",
+      "fetched_at": "2026-11-05T01:37:32.161103+00:00",
+      "file": "data/verification/box-401909874.json.gz"
+    },
+    {
+      "key": "box-401909875",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909875",
+      "fetched_at": "2026-11-05T01:37:32.203482+00:00",
+      "file": "data/verification/box-401909875.json.gz"
+    },
+    {
+      "key": "box-401909876",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909876",
+      "fetched_at": "2026-11-05T01:37:32.282511+00:00",
+      "file": "data/verification/box-401909876.json.gz"
+    },
+    {
+      "key": "box-401909877",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909877",
+      "fetched_at": "2026-11-05T01:37:32.383223+00:00",
+      "file": "data/verification/box-401909877.json.gz"
+    },
+    {
+      "key": "box-401909878",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909878",
+      "fetched_at": "2026-11-05T01:37:32.422050+00:00",
+      "file": "data/verification/box-401909878.json.gz"
+    },
+    {
+      "key": "box-401909879",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909879",
+      "fetched_at": "2026-11-05T01:37:32.404394+00:00",
+      "file": "data/verification/box-401909879.json.gz"
+    },
+    {
+      "key": "box-401909880",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909880",
+      "fetched_at": "2026-11-05T01:37:32.450964+00:00",
+      "file": "data/verification/box-401909880.json.gz"
+    },
+    {
+      "key": "box-401909881",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909881",
+      "fetched_at": "2026-11-05T01:37:32.617679+00:00",
+      "file": "data/verification/box-401909881.json.gz"
+    },
+    {
+      "key": "box-401909882",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909882",
+      "fetched_at": "2026-11-05T01:37:32.600583+00:00",
+      "file": "data/verification/box-401909882.json.gz"
+    },
+    {
+      "key": "box-401909883",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909883",
+      "fetched_at": "2026-11-05T01:37:32.579363+00:00",
+      "file": "data/verification/box-401909883.json.gz"
+    },
+    {
+      "key": "box-401909884",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909884",
+      "fetched_at": "2026-11-05T01:37:32.649630+00:00",
+      "file": "data/verification/box-401909884.json.gz"
+    },
+    {
+      "key": "box-401909885",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909885",
+      "fetched_at": "2026-11-05T01:37:32.791600+00:00",
+      "file": "data/verification/box-401909885.json.gz"
+    },
+    {
+      "key": "box-401909886",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909886",
+      "fetched_at": "2026-11-05T01:37:32.774006+00:00",
+      "file": "data/verification/box-401909886.json.gz"
+    },
+    {
+      "key": "box-401909887",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909887",
+      "fetched_at": "2026-11-05T01:37:32.813029+00:00",
+      "file": "data/verification/box-401909887.json.gz"
+    },
+    {
+      "key": "box-401909888",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909888",
+      "fetched_at": "2026-11-05T01:37:32.827185+00:00",
+      "file": "data/verification/box-401909888.json.gz"
+    },
+    {
+      "key": "box-401909889",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909889",
+      "fetched_at": "2026-11-05T01:37:33.042221+00:00",
+      "file": "data/verification/box-401909889.json.gz"
+    },
+    {
+      "key": "box-401909890",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909890",
+      "fetched_at": "2026-11-05T01:37:33.009276+00:00",
+      "file": "data/verification/box-401909890.json.gz"
+    },
+    {
+      "key": "box-401909891",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909891",
+      "fetched_at": "2026-11-05T01:37:33.018212+00:00",
+      "file": "data/verification/box-401909891.json.gz"
+    },
+    {
+      "key": "box-401909892",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909892",
+      "fetched_at": "2026-11-05T01:37:32.985965+00:00",
+      "file": "data/verification/box-401909892.json.gz"
+    },
+    {
+      "key": "box-401909893",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909893",
+      "fetched_at": "2026-11-05T01:37:33.196582+00:00",
+      "file": "data/verification/box-401909893.json.gz"
+    },
+    {
+      "key": "box-401909894",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909894",
+      "fetched_at": "2026-11-05T01:37:33.186911+00:00",
+      "file": "data/verification/box-401909894.json.gz"
+    },
+    {
+      "key": "box-401909895",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909895",
+      "fetched_at": "2026-11-05T01:37:33.227187+00:00",
+      "file": "data/verification/box-401909895.json.gz"
+    },
+    {
+      "key": "box-401909277",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909277",
+      "fetched_at": "2026-11-05T01:37:33.229767+00:00",
+      "file": "data/verification/box-401909277.json.gz"
+    },
+    {
+      "key": "box-401909278",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909278",
+      "fetched_at": "2026-11-05T01:37:33.405139+00:00",
+      "file": "data/verification/box-401909278.json.gz"
+    },
+    {
+      "key": "box-401909279",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909279",
+      "fetched_at": "2026-11-05T01:37:33.400493+00:00",
+      "file": "data/verification/box-401909279.json.gz"
+    },
+    {
+      "key": "box-401909280",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909280",
+      "fetched_at": "2026-11-05T01:37:33.435482+00:00",
+      "file": "data/verification/box-401909280.json.gz"
+    },
+    {
+      "key": "box-401909281",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909281",
+      "fetched_at": "2026-11-05T01:37:33.570159+00:00",
+      "file": "data/verification/box-401909281.json.gz"
+    },
+    {
+      "key": "box-401909282",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909282",
+      "fetched_at": "2026-11-05T01:37:33.680026+00:00",
+      "file": "data/verification/box-401909282.json.gz"
+    },
+    {
+      "key": "box-401909283",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909283",
+      "fetched_at": "2026-11-05T01:37:33.753890+00:00",
+      "file": "data/verification/box-401909283.json.gz"
+    },
+    {
+      "key": "box-401909284",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909284",
+      "fetched_at": "2026-11-05T01:37:33.770091+00:00",
+      "file": "data/verification/box-401909284.json.gz"
+    },
+    {
+      "key": "box-401909285",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909285",
+      "fetched_at": "2026-11-05T01:37:33.722279+00:00",
+      "file": "data/verification/box-401909285.json.gz"
+    },
+    {
+      "key": "box-401909286",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909286",
+      "fetched_at": "2026-11-05T01:37:33.852304+00:00",
+      "file": "data/verification/box-401909286.json.gz"
+    },
+    {
+      "key": "box-401909896",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909896",
+      "fetched_at": "2026-11-05T01:37:33.894930+00:00",
+      "file": "data/verification/box-401909896.json.gz"
+    },
+    {
+      "key": "box-401909897",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909897",
+      "fetched_at": "2026-11-05T01:37:33.956904+00:00",
+      "file": "data/verification/box-401909897.json.gz"
+    },
+    {
+      "key": "box-401909898",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909898",
+      "fetched_at": "2026-11-05T01:37:33.924665+00:00",
+      "file": "data/verification/box-401909898.json.gz"
+    },
+    {
+      "key": "box-401909899",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909899",
+      "fetched_at": "2026-11-05T01:37:34.031352+00:00",
+      "file": "data/verification/box-401909899.json.gz"
+    },
+    {
+      "key": "box-401909900",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909900",
+      "fetched_at": "2026-11-05T01:37:34.122029+00:00",
+      "file": "data/verification/box-401909900.json.gz"
+    },
+    {
+      "key": "box-401909901",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909901",
+      "fetched_at": "2026-11-05T01:37:34.084885+00:00",
+      "file": "data/verification/box-401909901.json.gz"
+    },
+    {
+      "key": "box-401909902",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909902",
+      "fetched_at": "2026-11-05T01:37:34.142603+00:00",
+      "file": "data/verification/box-401909902.json.gz"
+    },
+    {
+      "key": "box-401909903",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909903",
+      "fetched_at": "2026-11-05T01:37:34.191599+00:00",
+      "file": "data/verification/box-401909903.json.gz"
+    },
+    {
+      "key": "box-401909904",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909904",
+      "fetched_at": "2026-11-05T01:37:34.241949+00:00",
+      "file": "data/verification/box-401909904.json.gz"
+    },
+    {
+      "key": "box-401909905",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909905",
+      "fetched_at": "2026-11-05T01:37:34.305207+00:00",
+      "file": "data/verification/box-401909905.json.gz"
+    },
+    {
+      "key": "box-401909906",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909906",
+      "fetched_at": "2026-11-05T01:37:34.328328+00:00",
+      "file": "data/verification/box-401909906.json.gz"
+    },
+    {
+      "key": "box-401909907",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909907",
+      "fetched_at": "2026-11-05T01:37:34.359830+00:00",
+      "file": "data/verification/box-401909907.json.gz"
+    },
+    {
+      "key": "box-401909908",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909908",
+      "fetched_at": "2026-11-05T01:37:34.389398+00:00",
+      "file": "data/verification/box-401909908.json.gz"
+    },
+    {
+      "key": "box-401909909",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909909",
+      "fetched_at": "2026-11-05T01:37:34.467296+00:00",
+      "file": "data/verification/box-401909909.json.gz"
+    },
+    {
+      "key": "box-401909910",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909910",
+      "fetched_at": "2026-11-05T01:37:34.505193+00:00",
+      "file": "data/verification/box-401909910.json.gz"
+    },
+    {
+      "key": "box-401909911",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909911",
+      "fetched_at": "2026-11-05T01:37:34.520669+00:00",
+      "file": "data/verification/box-401909911.json.gz"
+    },
+    {
+      "key": "box-401909912",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909912",
+      "fetched_at": "2026-11-05T01:37:34.546904+00:00",
+      "file": "data/verification/box-401909912.json.gz"
+    },
+    {
+      "key": "box-401909913",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909913",
+      "fetched_at": "2026-11-05T01:37:34.627295+00:00",
+      "file": "data/verification/box-401909913.json.gz"
+    },
+    {
+      "key": "box-401909914",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909914",
+      "fetched_at": "2026-11-05T01:37:34.685088+00:00",
+      "file": "data/verification/box-401909914.json.gz"
+    },
+    {
+      "key": "box-401909915",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909915",
+      "fetched_at": "2026-11-05T01:37:34.693832+00:00",
+      "file": "data/verification/box-401909915.json.gz"
+    },
+    {
+      "key": "box-401909916",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909916",
+      "fetched_at": "2026-11-05T01:37:34.733052+00:00",
+      "file": "data/verification/box-401909916.json.gz"
+    },
+    {
+      "key": "box-401909917",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909917",
+      "fetched_at": "2026-11-05T01:37:34.873677+00:00",
+      "file": "data/verification/box-401909917.json.gz"
+    },
+    {
+      "key": "box-401909918",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909918",
+      "fetched_at": "2026-11-05T01:37:34.853074+00:00",
+      "file": "data/verification/box-401909918.json.gz"
+    },
+    {
+      "key": "box-401909919",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909919",
+      "fetched_at": "2026-11-05T01:37:34.891486+00:00",
+      "file": "data/verification/box-401909919.json.gz"
+    },
+    {
+      "key": "box-401909920",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909920",
+      "fetched_at": "2026-11-05T01:37:34.909097+00:00",
+      "file": "data/verification/box-401909920.json.gz"
+    },
+    {
+      "key": "box-401909921",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909921",
+      "fetched_at": "2026-11-05T01:37:35.035833+00:00",
+      "file": "data/verification/box-401909921.json.gz"
+    },
+    {
+      "key": "upstream-files",
+      "url": "https://api.github.com/repos/chronicaria/chronicaria.github.io/contents/data?ref=dc200d996eb9f7daa7790bad91c088d50821b65b",
+      "fetched_at": "2026-11-05T01:40:06.945663+00:00",
+      "file": "data/verification/upstream-files.json.gz"
+    },
+    {
+      "key": "upstream-commits",
+      "url": "https://api.github.com/repos/chronicaria/chronicaria.github.io/commits?path=data/teams.csv&per_page=100",
+      "fetched_at": "2026-11-05T01:40:06.797795+00:00",
+      "file": "data/verification/upstream-commits.json.gz"
+    }
+  ]
+}

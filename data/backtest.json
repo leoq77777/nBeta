@@ -1,0 +1,20 @@
+[
+  {
+    "model": "n-Beta",
+    "split": "snapshot prequential",
+    "seasons": "2026–27",
+    "games": 107,
+    "logloss": 0.606668,
+    "brier": 0.210492,
+    "acc": 0.672897
+  },
+  {
+    "model": "50% baseline",
+    "split": "snapshot prequential",
+    "seasons": "2026–27",
+    "games": 107,
+    "logloss": 0.693147,
+    "brier": 0.25,
+    "acc": 0.514019
+  }
+]

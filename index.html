@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="n-Beta NBA probability lab. Bayesian team ratings, season simulations, matchup forecasts and transparent model audit.">
+<meta name="theme-color" content="#111713">
+<title>n-Beta — NBA Probability Lab</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23c4f36b'/%3E%3Ctext x='7' y='29' font-size='30' font-family='serif'%3Eβ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/d3.v7.min.js" defer></script><script src="assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="masthead"><a class="brand" href="#rankings" aria-label="n-Beta home">n<span>β</span><i>n-Beta</i></a><div class="strap">NBA PROBABILITY LAB <span>EST. 2026</span></div><button id="theme" aria-label="Switch color theme" title="Switch theme">◐</button></header>
+<main id="dash-root">
+<section class="intro"><div><p class="eyebrow">THE SEASON, IN PROBABILITIES</p><h1>Beyond the record<span>.</span></h1><p class="lede">Thirty teams. A hundred thousand possible seasons.<br>One evolving view of the league.</p></div><div class="run-stamp" id="run-stamp" aria-live="polite">Loading model snapshot…</div></section>
+<nav id="tabs" aria-label="Main views"><a href="#rankings">Rankings</a><a href="#wins">Win distributions</a><a href="#ratings">Ratings</a><a href="#games">Games</a><a href="#team">Teams</a><a href="#model">Model & audit <span>↗</span></a></nav>
+<div id="data-notice" class="notice"></div>
+<section id="content" tabindex="-1" aria-live="polite"><p class="loading">Loading league data…</p></section>
+</main>
+<footer class="site-foot"><span class="foot-brand">nβ</span><p>Probability is a perspective, not a promise.<br><span>Snapshot research model · data provenance and coverage in Model & audit.</span></p><a href="data/teams.csv" download>Download data ↙</a></footer>
+<noscript>This dashboard needs JavaScript. Download the CSV files from the data directory to inspect the snapshot.</noscript>
+</body></html>

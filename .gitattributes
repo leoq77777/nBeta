@@ -1,0 +1,3 @@
+* text=auto
+# Preserve seed CSV bytes so provenance hashes remain reproducible.
+*.csv -text whitespace=cr-at-eol
