@@ -9,3 +9,10 @@
 .rank-tables td,.rank-tables th{padding:11px 7px}.rank-tables table{font-size:11px}.rank-tables .team-name{min-width:112px}.rank-tables .mini-bar{width:20px}.rank-tables .prob{gap:4px}.schedule-detail{max-height:540px;overflow:auto}.schedule-detail th{position:sticky;top:0;z-index:1}.run-stamp strong small{font:11px Courier New,monospace;letter-spacing:0}
 .two-col>* ,.three-col>*{min-width:0}
 @media(max-width:700px){.stat:last-child strong{font-size:20px}.run-stamp{line-height:2}.run-stamp strong{display:block;margin:4px 0}.table-wrap{scrollbar-width:thin}}
+
+/* Language selection shares the masthead's compact control treatment. */
+.masthead #language{margin-left:auto;padding:8px 10px;font:11px 'Courier New',monospace;letter-spacing:.03em;color:var(--muted);white-space:nowrap}
+.masthead #language .selected{color:var(--accent);font-weight:700}
+.masthead #language .language-separator{opacity:.55}
+.masthead #theme{margin-left:0}
+@media(max-width:700px){.masthead #language{padding:8px;font-size:10px}}

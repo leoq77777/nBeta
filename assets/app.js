@@ -13,7 +13,7 @@ const teamLink = ab => `#team/${encodeURIComponent(ab)}`;
 function teamName(ab,detail=true){const t=teams.get(ab);return `<a class="team-name" title="${esc(t?.last_game||'')}" href="${teamLink(ab)}">${logo.get(ab)?`<img src="${esc(logo.get(ab))}" alt="" loading="lazy">`:''}<span><strong>${esc(t?.name||ab)}</strong>${detail?`<small>${esc(ab)} · ${t.w}–${t.l}</small>`:''}</span></a>`;}
 function heading(title,sub='',controls=''){return `<div class="toolbar"><h2>${title}</h2>${sub?`<span class="sub">${sub}</span>`:''}<div class="push"></div>${controls}</div>`;}
 const confControl = () => `<div class="segmented" aria-label="Conference">${['League','East','West'].map(c=>`<button data-conf="${c}" class="${state.conf===c?'active':''}" aria-pressed="${state.conf===c}">${c}</button>`).join('')}</div>`;
-const filteredTeams = () => D.teams.filter(t=>(state.conf==='League'||t.conf===state.conf)&&`${t.name} ${t.city} ${t.abbr}`.toLowerCase().includes(state.query.toLowerCase()));
+const filteredTeams = () => D.teams.filter(t=>(state.conf==='League'||t.conf===state.conf)&&`${t.name} ${t.city} ${t.abbr} ${window.nbetaTranslate?.(`${t.city} ${t.name}`) || ''}`.toLowerCase().includes(state.query.toLowerCase()));
 function table(headers, rows, label='Data'){return `<div class="table-wrap ${label==='Remaining schedule'?'schedule-detail':''}" tabindex="0" role="region" aria-label="${esc(label)}"><table aria-label="${esc(label)}"><thead><tr>${headers.map(x=>`<th scope="col">${x}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;}
 const row = cells => `<tr>${cells.map(c=>`<td>${c}</td>`).join('')}</tr>`;
 function prob(v){return `<span class="prob"><span class="mini-bar"><i style="width:${(+v*100).toFixed(2)}%"></i></span><span class="num">${pct(v)}</span></span>`;}
@@ -208,3 +208,8 @@ async function init(){
   }catch(e){$('#content').innerHTML=`<div class="error"><h2>Snapshot unavailable</h2><p>${esc(e.message)}</p><p>Serve this directory over HTTP, or rebuild the data with <code>python -m pipeline.build_daily</code>.</p><button id="retry">Retry loading</button></div>`;$('#retry').onclick=()=>location.reload();$('#run-stamp').textContent='DATA LOAD FAILED';}
 }
 init();
+
+// Load presentation localization independently of the model and its data.
+const languageScript = document.createElement('script');
+languageScript.src = 'assets/i18n.js';
+document.head.append(languageScript);
