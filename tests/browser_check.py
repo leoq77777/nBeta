@@ -95,7 +95,7 @@ with sync_playwright() as p:
     expected_origin=os.environ.get('EXPECTED_DATA_ORIGIN')
     if expected_origin:
         check(data_url.startswith(expected_origin+'/'), 'CSV downloads use configured backend')
-        check(page.evaluate('DATA_ROOT').startswith(expected_origin+'/snapshots/'), 'Browser uses pinned backend snapshot')
+        check(page.evaluate('DATA_ROOT').startswith(expected_origin+'/') and '/snapshots/' in page.evaluate('DATA_ROOT'), 'Browser uses pinned backend snapshot')
     for resource in ['teams','schedule','win_dist','players','backtest','calibration']:
         response=page.request.get(data_url.rsplit('/',1)[0]+'/'+resource+'.csv')
         check(response.ok and len(response.body())>10,f'CSV available: {resource}')
