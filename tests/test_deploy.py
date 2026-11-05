@@ -13,7 +13,12 @@ class DeploymentTests(unittest.TestCase):
             (root / 'current').symlink_to('snapshots/old')
             def fail(*args, **kwargs):
                 raise RuntimeError('build failed')
-            with patch('deploy.refresh.build_all', fail):
+            feed = {'source':'test', 'checked_at':'test', 'pending_game_ids': [], 'unresolved_past_game_ids': []}
+            with patch('deploy.refresh.ingest', side_effect=RuntimeError('feed failed')):
+                with self.assertRaises(RuntimeError):
+                    publish(root, 1)
+            self.assertEqual((root / 'current').resolve(), (root / 'snapshots' / 'old').resolve())
+            with patch('deploy.refresh.ingest', return_value=feed), patch('deploy.refresh.build_all', fail):
                 with self.assertRaises(RuntimeError):
                     publish(root, 1)
             self.assertEqual((root / 'current').resolve(), (root / 'snapshots' / 'old').resolve())
@@ -21,7 +26,7 @@ class DeploymentTests(unittest.TestCase):
                 data = staging / 'data'
                 (data / 'run.json').write_text(json.dumps([{'as_of':'test'}]))
                 (data / 'run.csv').write_text('as_of\ntest\n')
-            with patch('deploy.refresh.build_all', build):
+            with patch('deploy.refresh.ingest', return_value=feed), patch('deploy.refresh.build_all', build):
                 version = publish(root, 1)
             self.assertEqual((root / 'current').resolve(), (root / 'snapshots' / version).resolve())
             self.assertEqual((root / 'snapshots' / version).stat().st_mode & 0o777, 0o755)

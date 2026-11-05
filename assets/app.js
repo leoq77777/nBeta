@@ -202,7 +202,7 @@ async function init(){
     if(!D.run.length||D.teams.length!==30||!D.history.length)throw Error('Incomplete model snapshot');
     teams=new Map(D.teams.map(t=>[t.abbr,t]));logo=new Map(D.logos.map(l=>[l.abbr,l.src]));tooltip=document.createElement('div');tooltip.className='chart-tip';tooltip.hidden=true;document.body.append(tooltip);
     const r=D.run[0];$('#run-stamp').innerHTML=`<span class="dot"></span>SEASON ${esc(r.season)}<strong>${(+r.n_sims).toLocaleString()}<small> simulations</small></strong>DATA THROUGH ${esc(r.data_through)}<br>${r.games_played} FINAL · ${r.games_left} REMAINING`;
-    $('#data-notice').innerHTML=`<b>SEED SNAPSHOT</b> / ${r.schedule_games} listed games · ${r.missing_games} unlisted · ${esc(r.margin_method)} · <a href="#model">View data audit ↗</a>`;
+    $('#data-notice').innerHTML=`<b>${r.score_source?'SCORE FEED':'SEED SNAPSHOT'}</b> / ${r.schedule_games} listed games · ${r.missing_games} unlisted · ${esc(r.margin_method)}${r.score_checked_at?` · scores checked ${esc(r.score_checked_at)} UTC`:''}${r.score_unresolved_games?` · ${r.score_unresolved_games} earlier games unresolved`:''} · <a href="#model">View data audit ↗</a>`;
     document.addEventListener('click',event=>{const b=event.target.closest('[data-conf]');if(b){state.conf=b.dataset.conf;render();}});
     window.addEventListener('hashchange',render);render();
   }catch(e){$('#content').innerHTML=`<div class="error"><h2>Snapshot unavailable</h2><p>${esc(e.message)}</p><p>Serve this directory over HTTP, or rebuild the data with <code>python -m pipeline.build_daily</code>.</p><button id="retry">Retry loading</button></div>`;$('#retry').onclick=()=>location.reload();$('#run-stamp').textContent='DATA LOAD FAILED';}

@@ -20,6 +20,12 @@ with sync_playwright() as p:
     page.goto(BASE)
     page.wait_for_load_state('networkidle')
     check(page.locator('tbody tr').count()==30,'Rankings: 30 teams')
+    expected_date=os.environ.get('EXPECTED_DATA_THROUGH')
+    expected_games=os.environ.get('EXPECTED_FINAL_GAMES')
+    if expected_date:
+        check(expected_date in page.locator('#run-stamp').inner_text(), 'Latest data date shown')
+    if expected_games:
+        check(expected_games+' FINAL' in page.locator('#run-stamp').inner_text(), 'Latest completed game count shown')
     page.get_by_role('button',name='Sort by Rating',exact=True).first.click()
     page.get_by_role('button',name='East',exact=True).click()
     check(page.locator('tbody tr').count()==15,'Conference works after sorting')
