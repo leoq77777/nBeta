@@ -14,6 +14,7 @@ APP = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(APP))
 from pipeline.build_daily import build_all
 from deploy.feed import ingest
+from deploy.player_stats import build_player_stats
 
 
 def publish(root: Path, sims: int = 100_000) -> str:
@@ -27,6 +28,14 @@ def publish(root: Path, sims: int = 100_000) -> str:
         shutil.copytree(previous_seed if previous_seed.is_dir() else APP / 'data' / 'seed', staging / 'data' / 'seed')
         feed = ingest(staging / 'data' / 'seed', staging / 'evidence')
         build_all(staging, n_sims=sims)
+        try:
+            player_stats = build_player_stats(staging / "data" / "seed", root / "player-box-cache")
+            (staging / "data" / "player_stats.json").write_text(json.dumps(player_stats))
+        except Exception as exc:
+            print(f"Player statistics unavailable: {exc}", file=sys.stderr)
+            previous = root / "current" / "data" / "player_stats.json"
+            if previous.is_file():
+                shutil.copy2(previous, staging / "data" / "player_stats.json")
         run_path = staging / 'data' / 'run.json'
         run = json.loads(run_path.read_text())
         run[0].update(snapshot_id=version, score_source=feed['source'], score_checked_at=feed['checked_at'], score_pending_games=len(feed['pending_game_ids']), score_unresolved_games=len(feed['unresolved_past_game_ids']))
