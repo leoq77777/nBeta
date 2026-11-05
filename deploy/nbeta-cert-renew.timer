@@ -1,0 +1,8 @@
+[Unit]
+Description=Check n-Beta certificate renewal
+[Timer]
+OnCalendar=*-*-* 03,15:17:00 UTC
+Persistent=true
+RandomizedDelaySec=30m
+[Install]
+WantedBy=timers.target

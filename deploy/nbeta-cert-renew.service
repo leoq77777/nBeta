@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew n-Beta HTTPS certificate
+After=network-online.target
+[Service]
+Type=oneshot
+User=ubuntu
+ExecStart=/home/ubuntu/projects/nbeta-venv/bin/certbot renew --quiet --non-interactive --config-dir /home/ubuntu/projects/nbeta/acme/config --work-dir /home/ubuntu/projects/nbeta/acme/work --logs-dir /home/ubuntu/projects/nbeta/acme/log --deploy-hook "/usr/bin/sudo -n /usr/bin/systemctl reload nginx"

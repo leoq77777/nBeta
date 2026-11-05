@@ -1,0 +1,9 @@
+[Unit]
+Description=n-Beta offline snapshot refresh
+After=network-online.target
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/projects/nbeta/app
+Environment=NBETA_ROOT=/home/ubuntu/projects/nbeta
+ExecStart=/home/ubuntu/projects/nbeta-venv/bin/python /home/ubuntu/projects/nbeta/app/deploy/refresh.py

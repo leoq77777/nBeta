@@ -1,6 +1,7 @@
 """Run with a server at BASE_URL (default http://127.0.0.1:8765)."""
 import os
 from pathlib import Path
+from urllib.parse import urljoin
 from playwright.sync_api import sync_playwright, expect
 
 BASE = os.environ.get('BASE_URL','http://127.0.0.1:8765')
@@ -90,8 +91,13 @@ with sync_playwright() as p:
         check(not page.evaluate('document.documentElement.scrollWidth > innerWidth'),f'No mobile document overflow: {view}')
         page.screenshot(path=str(OUT/f'{view}-mobile.png'),full_page=True)
     check(not errors, f'No JavaScript errors: {errors}')
+    data_url=urljoin(BASE, page.locator('.site-foot a[download]').get_attribute('href'))
+    expected_origin=os.environ.get('EXPECTED_DATA_ORIGIN')
+    if expected_origin:
+        check(data_url.startswith(expected_origin+'/'), 'CSV downloads use configured backend')
+        check(page.evaluate('DATA_ROOT').startswith(expected_origin+'/snapshots/'), 'Browser uses pinned backend snapshot')
     for resource in ['teams','schedule','win_dist','players','backtest','calibration']:
-        response=page.request.get(f'{BASE}/data/{resource}.csv')
+        response=page.request.get(data_url.rsplit('/',1)[0]+'/'+resource+'.csv')
         check(response.ok and len(response.body())>10,f'CSV available: {resource}')
     failed=browser.new_page()
     failed.route('**/data/teams.json',lambda route:route.fulfill(status=503,body='Unavailable'))
