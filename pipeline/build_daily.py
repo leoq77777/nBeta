@@ -234,6 +234,9 @@ def build_all(root_dir: Path, use_live_injuries: bool = False, n_sims: int = 100
             "note": g["note"],
         })
     write_csv_and_json(out_dir, "schedule", sched_export, sched_fields)
+    (out_dir / "prediction_traces.json").write_text(json.dumps(
+        [g["prediction_trace"] for g in schedule if g["status"] != "final"],
+        ensure_ascii=False, allow_nan=False, indent=2))
     write_csv_and_json(out_dir, "win_dist", win_dist_rows, ["abbr", "wins", "p", "p_prior"])
     write_csv_and_json(
         out_dir, "history", kalman["daily_history"],

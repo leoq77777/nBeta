@@ -369,9 +369,29 @@ def run_kalman_state_space_model(
         r_h = recovery_w * active_rating[h] + (1.0 - recovery_w) * mu[h]
         r_a = recovery_w * active_rating[a] + (1.0 - recovery_w) * mu[a]
 
-        exp_margin, p_home, _ = predict_game_student_t(
+        exp_margin, p_home, total_sd = predict_game_student_t(
             r_h, r_a, rating_sd_map[h], rating_sd_map[a], h, a, g, cfg
         )
+        # Observability only: ordered ablations share the production variance/transform.
+        stage_margins = [("strength", mu[h] - mu[a]),
+                         ("availability", r_h - r_a), ("context", exp_margin)]
+        scale = total_sd * math.sqrt((cfg.student_t_df - 2.0) / cfg.student_t_df)
+        g["prediction_trace"] = {
+            "game_id": g["id"], "date": g["date"], "tip": g["tip"], "home": h, "away": a,
+            "inputs": {"home_rating": mu[h], "away_rating": mu[a],
+                       "home_active_rating": active_rating[h], "away_active_rating": active_rating[a],
+                       "home_rating_sd": rating_sd_map[h], "away_rating_sd": rating_sd_map[a],
+                       "recovery_weight": recovery_w, "days_ahead": days_ahead,
+                       **{k: g.get(k, 0 if k != "home_rest" and k != "away_rest" else 1)
+                          for k in ("neutral", "is_altitude", "home_rest", "away_rest", "home_b2b", "away_b2b", "home_3in4", "away_3in4")}},
+            "distribution": {"family": "student_t_margin", "sd": total_sd,
+                             "scale": scale, "df": cfg.student_t_df},
+            "stages": [{"name": name, "mean": margin,
+                        "p_home": min(.995, max(.005, float(student_t_cdf(margin / scale, cfg.student_t_df))))}
+                       for name, margin in stage_margins],
+            "unsupported_stages": ["additive_research", "lineup_interactions", "joint_score_prediction"],
+        }
+        assert abs(g["prediction_trace"]["stages"][-1]["p_home"] - p_home) < 1e-12
         model_spread = round(-exp_margin, 1)
 
         # Only independently supplied market observations qualify as a benchmark.

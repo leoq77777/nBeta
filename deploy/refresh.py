@@ -15,6 +15,7 @@ sys.path.insert(0, str(APP))
 from pipeline.build_daily import build_all
 from deploy.feed import ingest
 from deploy.player_stats import build_player_stats
+from deploy.trace import update_trace
 
 
 def publish(root: Path, sims: int = 100_000) -> str:
@@ -53,6 +54,7 @@ def publish(root: Path, sims: int = 100_000) -> str:
             writer.writerows(records)
         staging.chmod(0o755)
         staging.rename(snapshots / version)
+        update_trace(root, snapshots / version, version, APP)
         pointer.symlink_to(Path('snapshots') / version)
         os.replace(pointer, root / 'current')
         return version

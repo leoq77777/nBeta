@@ -26,6 +26,8 @@ class DeploymentTests(unittest.TestCase):
                 data = staging / 'data'
                 (data / 'run.json').write_text(json.dumps([{'as_of':'test'}]))
                 (data / 'run.csv').write_text('as_of\ntest\n')
+                (data / 'schedule.json').write_text('[]')
+                (data / 'prediction_traces.json').write_text('[]')
             with patch('deploy.refresh.ingest', return_value=feed), patch('deploy.refresh.build_all', build):
                 version = publish(root, 1)
             self.assertEqual((root / 'current').resolve(), (root / 'snapshots' / version).resolve())
