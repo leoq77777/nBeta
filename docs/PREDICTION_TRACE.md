@@ -1,6 +1,6 @@
 # Live forecast trace and forward feed
 
-The daily snapshot job now appends forecast evidence and joins later final results. The production model's actual stages are team strength, availability/recovery and game context. These are ordered mean ablations with a shared Student-t variance, not independently fitted models or causal contributions. Additive, lineup interactions and joint-score prediction remain research-only and are explicitly listed as unavailable.
+The daily snapshot job now appends forecast evidence and joins later final results. The active Additive stages are dynamic baseline, team/history feature correction and player feature correction, sharing its normal margin variance. The legacy Student-t model is retained as a separately versioned shadow with strength, availability/recovery and context stages. These are ordered ablations, not causal contributions. True lineup interactions remain unavailable.
 
 ## Capture and settlement
 
@@ -20,7 +20,7 @@ Every newly published immutable snapshot includes:
 - `data/trace_games.json`: all eligible settled forecasts, immutable forecast/outcome hashes and per-stage residuals.
 - `data/prediction_traces.json`: current upcoming-stage forecasts.
 
-The Model & audit page exposes diagnostics and downloads using its pinned backend snapshot. Reports contain no fabricated score-total or Additive diagnostics. Zero settled games initially means evidence is accumulating, not that performance is perfect.
+The Model & audit page exposes diagnostics and downloads using its pinned backend snapshot. Additive joint-score diagnostics are calculated only for eligible actual Additive forecasts; legacy forecasts never receive fabricated score totals. Zero settled games initially means evidence is accumulating, not that performance is perfect.
 
 Positive delta Log Loss or squared error means that stage worsened prediction versus the immediately preceding stage. One-game errors and subgroup calibration are descriptive, not causal findings or upgrade tests.
 

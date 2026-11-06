@@ -67,7 +67,7 @@ def evaluate(events):
                 model_version=event['model_version'],forecast_sha256=event['sha256'],result_sha256=result['sha256'],
                 predicted_at=event['recorded_at'],forecast_tip=trace['tip'],actual_tip=result['tip'],
                 home_score=result['home_score'],away_score=result['away_score'],outcome=y,
-                inputs=trace['inputs'],stages=stages))
+                inputs=trace['inputs'],stages=stages,model_name=trace.get('model_name','Legacy Student-t'),joint_score=trace.get('joint_score'),margin_sd=trace['distribution']['sd']))
     return scored,excluded
 
 
@@ -86,6 +86,30 @@ def aggregate(rows):
         delta_squared_error=sum(r.get('delta_squared_error',0) for r in rows)/n)
 
 
+def score_diagnostics(games):
+    from statistics import NormalDist
+    groups=defaultdict(list)
+    for g in games:
+        j=g.get('joint_score')
+        if not j:continue
+        em=g['home_score']-g['away_score']-g['stages'][-1]['mean']
+        et=g['home_score']+g['away_score']-j['total_mean']
+        ms=g['margin_sd']
+        ts=j['total_sd'];rho=j['rho'];eh=(et+em)/2;ea=(et-em)/2
+        vh=(ts*ts+ms*ms+2*rho*ts*ms)/4;va=(ts*ts+ms*ms-2*rho*ts*ms)/4
+        nll=math.log(2*math.pi*ts*ms)+.5*math.log(1-rho*rho)+((et/ts)**2+(em/ms)**2-2*rho*et*em/(ts*ms))/(2*(1-rho*rho))-math.log(2)
+        groups[(g['model_version'],g['model_name'])].append((et,eh,ea,ts,math.sqrt(vh),math.sqrt(va),nll))
+    out=[]
+    for (version,name),r in groups.items():
+        n=len(r);row=dict(model_version=version,model_name=name,games=n,total_mae=sum(abs(v[0]) for v in r)/n,total_rmse=math.sqrt(sum(v[0]**2 for v in r)/n),score_rmse=math.sqrt(sum(v[1]**2+v[2]**2 for v in r)/(2*n)),joint_score_nll=sum(v[6] for v in r)/n)
+        for coverage in (.8,.9,.95,.99):
+            z=NormalDist().inv_cdf((1+coverage)/2)
+            row[f'total_coverage_{int(coverage*100)}']=sum(abs(v[0])<=z*v[3] for v in r)/n
+            row[f'score_coverage_{int(coverage*100)}']=sum(int(abs(v[1])<=z*v[4])+int(abs(v[2])<=z*v[5]) for v in r)/(2*n)
+        out.append(row)
+    return out
+
+
 def report(events):
     games,excluded=evaluate(events);groups=defaultdict(list);teams=defaultdict(list);strata=defaultdict(list)
     for g in games:
@@ -99,13 +123,14 @@ def report(events):
     return dict(schema=1,activation=events[0]['recorded_at'] if events else None,ledger_head=events[-1]['sha256'] if events else None,
         forecast_records=sum(e['kind']=='forecast' for e in events),result_records=sum(e['kind']=='result' for e in events),
         eligible_games=len({g['game_id'] for g in games}),evaluated_forecasts=len(games),excluded=excluded,
-        stage_metrics=[dict(model_version=k[0],stage=k[1],**aggregate(v)) for k,v in groups.items()],
+        score_metrics=score_diagnostics(games),
+        stage_metrics=[dict(model_version=k[0],model_name=next(g['model_name'] for g in games if g['model_version']==k[0]),stage=k[1],**aggregate(v)) for k,v in groups.items()],
         strata=[dict(model_version=k[0],stage=k[1],group=k[2],**aggregate(v)) for k,v in strata.items()],
         team_residuals=[dict(model_version=k[0],team=k[1],games=len(v),mean_error=sum(r['error'] for r in v)/len(v),history=v) for k,v in teams.items()],
         largest_errors=sorted(games,key=lambda g:g['stages'][-1]['logloss'],reverse=True)[:20],
         limitations=['Primary cohort requires actual recording at or before T-24h. No historical backfill.',
         'Stages are ordered ablations with shared variance, not causal attributions.',
-        'Production heuristic model only; Additive, matchup interactions and score totals are not deployed.',
+        'Active Additive and legacy shadow are distinct model versions; season simulation remains legacy.',
         'Snapshot seed priors/player values/injuries are not independently point-in-time validated.',
         'Hash chain checks integrity but is not an independent trusted timestamp.',
         'Small sample diagnostics are descriptive; no automatic model or weight updates.']),games
@@ -114,8 +139,12 @@ def report(events):
 def update_trace(root, snapshot, version, app, now=None):
     now=(now or datetime.now(timezone.utc)).astimezone(timezone.utc);stamp=now.isoformat()
     traces=json.loads((snapshot/'data/prediction_traces.json').read_text())
+    shadow_path=snapshot/'data/legacy_prediction_traces.json'
+    if shadow_path.exists():
+        traces.extend(dict(t,model_name='Legacy Student-t',shadow=True) for t in json.loads(shadow_path.read_text()))
     schedule=json.loads((snapshot/'data/schedule.json').read_text())
     code_files=['pipeline/model.py','pipeline/config.py','pipeline/data_fetcher.py','pipeline/build_daily.py','deploy/trace.py']
+    code_files += [p for p in ('pipeline/additive.py','pipeline/additive_features.py') if (app/p).exists()]
     source=dict(code={p:hashlib.sha256((app/p).read_bytes()).hexdigest() for p in code_files},
                 seed={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((snapshot/'data/seed').glob('*.csv'))})
     model_version=digest(source['code']);folder=root/'forward_ledger';folder.mkdir(exist_ok=True)
@@ -134,11 +163,16 @@ def update_trace(root, snapshot, version, app, now=None):
             gid=trace['game_id'];g=scheduled[gid];tip=timestamp(trace['tip'])
             if g['status']=='final' or tip<=now or tip>now+timedelta(days=7):continue
             stages=trace['stages'];dist=trace['distribution']
-            if not stages or dist['sd']<=0 or dist['df']<=2:raise ValueError('Invalid trace distribution')
+            if not stages or dist['sd']<=0 or ('df' in dist and dist['df']<=2):raise ValueError('Invalid trace distribution')
+            joint=trace.get('joint_score')
+            if joint and (joint['total_sd']<=0 or abs(joint['rho'])>=1):raise ValueError('Invalid joint score distribution')
             if any(not math.isfinite(s['mean']) or not 0<s['p_home']<1 for s in stages):raise ValueError('Invalid trace prediction')
-            if abs(stages[-1]['p_home']-float(g['p_home']))>.000501 or abs(stages[-1]['mean']+float(g['spread']))>.050001:
+            expected_p=g['legacy_p_home'] if trace.get('shadow') else g['p_home']
+            expected_spread=g['legacy_spread'] if trace.get('shadow') else g['spread']
+            if abs(stages[-1]['p_home']-float(expected_p))>.000501 or abs(stages[-1]['mean']+float(expected_spread))>.050001:
                 raise ValueError('Trace and published forecast mismatch')
-            add(dict(kind='forecast',event_id=f'forecast:{version}:{gid}',snapshot_id=version,model_version=model_version,trace=trace,
+            trace_version=digest(dict(code_version=model_version,model_name=trace.get('model_name','Legacy Student-t'),artifact=trace.get('artifact_sha256')))
+            add(dict(kind='forecast',event_id=f'forecast:{version}:{gid}:{trace_version}',snapshot_id=version,model_version=trace_version,trace=trace,
                      cutoff=(tip-timedelta(hours=24)).isoformat(),eligible_at_capture=now<=tip-timedelta(hours=24)))
         for g in schedule:
             if g['status']!='final' or timestamp(g['tip'])<activation:continue

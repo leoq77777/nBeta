@@ -16,6 +16,7 @@ from pipeline.build_daily import build_all
 from deploy.feed import ingest
 from deploy.player_stats import build_player_stats
 from deploy.trace import update_trace
+from pipeline.additive import activate
 
 
 def publish(root: Path, sims: int = 100_000) -> str:
@@ -37,9 +38,13 @@ def publish(root: Path, sims: int = 100_000) -> str:
             previous = root / "current" / "data" / "player_stats.json"
             if previous.is_file():
                 shutil.copy2(previous, staging / "data" / "player_stats.json")
+        additive = activate(root, staging)
         run_path = staging / 'data' / 'run.json'
         run = json.loads(run_path.read_text())
         run[0].update(snapshot_id=version, score_source=feed['source'], score_checked_at=feed['checked_at'], score_pending_games=len(feed['pending_game_ids']), score_unresolved_games=len(feed['unresolved_past_game_ids']))
+        run[0].update(single_game_model=additive['model_name'] if additive else 'Legacy Student-t',
+                      single_game_artifact=additive['artifact_sha256'] if additive else None,
+                      season_simulation_model='Legacy Student-t')
         run_path.write_text(json.dumps(run, indent=2))
         csv_path = staging / 'data' / 'run.csv'
         with csv_path.open(newline='') as f:

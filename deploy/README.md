@@ -16,3 +16,6 @@ curl -fsS https://43.166.2.103.sslip.io/nbeta/data/run.json
 ```
 
 The certificate is managed by Certbot with a deployment hook that reloads Nginx after successful renewal. The project runs under the `ubuntu` account and uses an isolated virtual environment at `/home/ubuntu/projects/nbeta-venv`.
+
+
+The active Additive single-game bundle is selected via `models/active` under the server root. Frozen coefficients are in `models/additive-v1.json` in the repository; private replay inputs are hash-pinned and remain outside Nginx paths. Daily inference follows box collection and fails closed if a configured bundle or required input is invalid. New scheduled-game probabilities and expected scores use Additive; season simulations remain the legacy engine. See `docs/ADDITIVE_PRODUCTION.md` and `docs/PREDICTION_TRACE.md` for model boundaries, versioned live/shadow traces and rollback.
