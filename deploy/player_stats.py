@@ -1,6 +1,7 @@
 """Aggregate published ESPN box scores; a box-score index is not causal impact."""
 import csv
 import json
+import math
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -44,9 +45,20 @@ def parse_box(payload, game_id):
             a = player['athlete']
             # Hollinger Game Score: descriptive box-score production, not adjusted impact.
             score = pts + .4*fgm - .7*fga - .4*(fta-ftm) + .7*orb + .3*drb + stl + .7*ast + .7*blk - .4*pf - tov
-            rows.append(dict(id=str(a['id']), name=a['displayName'], team=canonical_team(box['team']['abbreviation']), minutes=minutes, points=pts, assists=ast, rebounds=orb+drb, fga=fga, fta=fta, score=score))
+            rows.append(dict(id=str(a['id']), name=a['displayName'], team=canonical_team(box['team']['abbreviation']), minutes=minutes, points=pts, assists=ast, rebounds=orb+drb, fgm=fgm, fga=fga, ftm=ftm, fta=fta, steals=stl, blocks=blk, turnovers=tov, score=score, shots=[]))
     if not rows:
         raise ValueError(f'{game_id}: empty box score')
+    by_id = {p['id']: p for p in rows}
+    for play in payload.get('plays', []):
+        if not play.get('shootingPlay') or play.get('pointsAttempted') not in (2, 3):
+            continue
+        participants = play.get('participants') or []
+        shooter = by_id.get(str(participants[0].get('athlete', {}).get('id'))) if participants else None
+        coordinate = play.get('coordinate') or {}
+        x, y = coordinate.get('x'), coordinate.get('y')
+        # ESPN coordinates are feet from the hoop end, with x centered at 25.
+        if shooter is not None and all(isinstance(v, (int, float)) and math.isfinite(v) for v in (x, y)) and 0 <= x <= 50 and -5.25 <= y <= 94:
+            shooter['shots'].append(dict(x=x, y=y, made=bool(play.get('scoringPlay'))))
     return rows
 
 
@@ -71,12 +83,14 @@ def build_player_stats(seed, cache):
     with ThreadPoolExecutor(max_workers=6) as pool:
         results = list(pool.map(fetch, games))
     totals = defaultdict(lambda: defaultdict(float))
+    shots = defaultdict(list)
     for rows in results:
         for row in rows:
             p = totals[row['id']]
             p.update(id=row['id'], name=row['name'], team=row['team'])
             p['gp'] += 1
-            for key in ('minutes','points','assists','rebounds','fga','fta','score'):
+            shots[row['id']].extend(row['shots'])
+            for key in ('minutes','points','assists','rebounds','fgm','fga','ftm','fta','steals','blocks','turnovers','score'):
                 p[key] += row[key]
     players = []
     for p in totals.values():
@@ -85,6 +99,10 @@ def build_player_stats(seed, cache):
         players.append(dict(id=p['id'], name=p['name'], team=p['team'], gp=gp,
             mpg=round(p['minutes']/gp,1), ppg=round(p['points']/gp,1), apg=round(p['assists']/gp,1),
             rpg=round(p['rebounds']/gp,1), ts=round(p['points']/(2*attempts),4) if attempts else None,
+            spg=round(p['steals']/gp,1), bpg=round(p['blocks']/gp,1), topg=round(p['turnovers']/gp,1),
+            fg=round(p['fgm']/p['fga'],4) if p['fga'] else None,
+            ft=round(p['ftm']/p['fta'],4) if p['fta'] else None,
+            fga=int(p['fga']), shots=shots[p['id']],
             game_score=round(p['score']/gp,2), total_game_score=round(p['score'],2)))
     return dict(source='ESPN game box scores', season_games=len(games), games_collected=len(results),
         through=max(g['date'] for g in games), checked_at=datetime.now(timezone.utc).isoformat(), players=players)

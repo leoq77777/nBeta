@@ -165,6 +165,39 @@ function modelView(){
   calibrationChart();
 }
 let playerStats, playerStatsPromise;
+function playerPhoto(p){
+  const id=String(p.id);
+  return `<span class="player-photo"><span aria-hidden="true">${esc(p.name.split(/\s+/).map(n=>n[0]).slice(0,2).join(''))}</span>${/^\d+$/.test(id)?`<img src="https://a.espncdn.com/i/headshots/nba/players/full/${id}.png" alt="" loading="lazy">`:''}</span>`;
+}
+function bindPlayerPhotos(){
+  document.querySelectorAll('.player-photo img').forEach(img=>{img.onerror=()=>img.remove();if(img.complete&&!img.naturalWidth)img.remove();});
+}
+function openPlayerDetail(p){
+  const dialog=$('#player-detail'), rate=v=>num(v)?`${fmt(v*100,1)}%`:'—';
+  $('#player-detail-body').innerHTML=`<div class="player-detail-top"><span class="impact-kicker">SEASON PROFILE</span><button id="close-player" aria-label="Close player profile" autofocus>×</button></div><div class="player-hero">${playerPhoto(p)}<div><p class="eyebrow">${esc(p.team)} · ${esc(playerStats.through)}</p><h2 id="player-name">${esc(p.name)}</h2><p class="muted small">Season to date · ${p.gp} GP · ${fmt(p.mpg)} MPG</p></div></div><div class="player-stat-grid">${[['PPG',fmt(p.ppg)],['RPG',fmt(p.rpg)],['APG',fmt(p.apg)],['TS%',rate(p.ts)],['SPG',fmt(p.spg)],['BPG',fmt(p.bpg)],['TOV / game',fmt(p.topg)],['FG%',rate(p.fg)],['FT%',rate(p.ft)],['Game Score / game',fmt(p.game_score,2)]].map(([label,value])=>`<div class="player-stat"><span>${label}</span><strong>${value}</strong></div>`).join('')}</div><section class="player-shooting"><h3>Shot heat map</h3><p class="caption">Color = field-goal percentage · opacity = shot volume · tap a zone for details.</p><div id="player-shot-chart"></div><p id="shot-zone-detail" class="caption" aria-live="polite">Select a zone to see makes and attempts.</p><div class="shot-legend"><span>0%</span><i></i><span>100% FG</span></div></section><p class="caption player-source">ESPN · Season box scores and play-by-play · Data through ${esc(playerStats.through)}</p>`;
+  bindPlayerPhotos();
+  drawPlayerShots(p);
+  $('#close-player').onclick=()=>dialog.close();
+  dialog.showModal();
+}
+function drawPlayerShots(p){
+  const shots=(p.shots||[]).filter(s=>num(s.x)&&num(s.y)&&s.x>=0&&s.x<=50&&s.y>=-5.25&&s.y<=94), half=shots.filter(s=>s.y<=47);
+  if(!shots.length){
+    $('#player-shot-chart').innerHTML='<div class="empty">Shot locations are not available for this snapshot.</div>';
+    $('#shot-zone-detail').hidden=true;$('.shot-legend').hidden=true;return;
+  }
+  const zones=d3.rollups(half,values=>({made:values.filter(s=>s.made).length,attempts:values.length}),s=>Math.min(4,Math.floor(s.x/10)),s=>Math.min(4,Math.floor((+s.y+5.25)/10.45))).flatMap(([x,ys])=>ys.map(([y,v])=>({x:x*10,y:y*10.45-5.25,...v})));
+  const max=d3.max(zones,z=>z.attempts)||1;
+  const svg=d3.select('#player-shot-chart').append('svg').attr('viewBox','-1 -6.25 52 54.25').attr('role','group').attr('aria-label','Season shot heat map');
+  svg.append('rect').attr('x',0).attr('y',-5.25).attr('width',50).attr('height',52.25).attr('class','shot-court-bg');
+  const cells=svg.append('g').selectAll('g').data(zones).join('g').attr('role','button').attr('tabindex',0).attr('aria-label',z=>`${z.made} / ${z.attempts} · ${fmt(z.made/z.attempts*100,1)}% FG`);
+  cells.append('rect').attr('x',z=>z.x+.2).attr('y',z=>z.y+.2).attr('width',9.6).attr('height',z=>10.05).attr('rx',.7).attr('fill',z=>d3.interpolateRgb('#ee9a86','#c4f36b')(z.made/z.attempts)).attr('fill-opacity',z=>.25+.65*Math.sqrt(z.attempts/max));
+  cells.append('text').attr('x',z=>z.x+5).attr('y',z=>z.y+5.225).attr('class','shot-zone-label').text(z=>`${Math.round(z.made/z.attempts*100)}%`);
+  const selectZone=(_,z)=>{$('#shot-zone-detail').textContent=`${z.made} / ${z.attempts} · ${fmt(z.made/z.attempts*100,1)}% FG`;};
+  cells.on('click focus mouseenter',selectZone).on('keydown',(e,z)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectZone(e,z);}});
+  svg.append('path').attr('class','shot-court-lines').attr('d','M0,-5.25H50V47H0Z M17,-5.25V13.75H33V-5.25 M19,13.75A6,6 0 0 0 31,13.75 M22,-1.25H28 M25,-.75a.75,.75 0 1 0 0,1.5a.75,.75 0 1 0 0,-1.5 M3,-5.25V8.9A23.75,23.75 0 0 0 47,8.9V-5.25 M19,47A6,6 0 0 1 31,47');
+  const coverage=document.createElement('p');coverage.className='caption shot-coverage';coverage.textContent=`Located attempts: ${shots.length} / ${num(p.fga)?p.fga:'—'} FGA · Beyond half court: ${shots.length-half.length}`;$('#player-shot-chart').append(coverage);
+}
 function impactView(){
   if(!playerStats){
     $('#content').innerHTML=heading('Impact players','SEASON BOX-SCORE PRODUCTION')+'<p class="loading">Loading player box scores…</p>';
@@ -172,8 +205,11 @@ function impactView(){
     return;
   }
   const mode=state.impactSort||'average', qualified=playerStats.players.filter(p=>p.gp>=3), ordered=[...qualified].sort((a,b)=>b[mode==='total'?'total_game_score':'game_score']-a[mode==='total'?'total_game_score':'game_score']);
-  const rows=ordered.slice(0,30).map((p,i)=>row([`<span class="rank">${String(i+1).padStart(2,'0')}</span>`,`<strong>${esc(p.name)}</strong>`,`<a href="${teamLink(p.team)}">${esc(p.team)}</a>`,p.gp,fmt(p.mpg),fmt(p.game_score,2),fmt(p.total_game_score,1),fmt(p.ppg),fmt(p.rpg),fmt(p.apg),num(p.ts)?`${fmt(p.ts*100,1)}%`:'—']));
-  $('#content').innerHTML=heading('Impact players','SEASON BOX-SCORE PRODUCTION',`<label class="impact-sort">Rank by <select id="impact-sort"><option value="average">Game Score / game</option><option value="total">Total Game Score</option></select></label>`)+`<div class="impact-intro"><div><span class="impact-kicker">01 / THE BOX SCORE LENS</span><h3>Production, in context.</h3><p>Game Score summarizes box-score production; it is not a causal measure of impact on winning. It misses off-ball play, defense beyond recorded events, teammates and opponents. Small early-season samples are volatile.</p></div><div class="impact-meta"><span>DATA THROUGH <strong>${esc(playerStats.through)}</strong></span><span>BOX SCORES <strong>${playerStats.games_collected} / ${playerStats.season_games}</strong></span><span>SOURCE <strong>ESPN</strong></span></div></div><p class="muted small">Minimum 3 games · Top 30 · Game Score per game ranks average production; total rewards availability. TS% = points / (2 × (FGA + 0.44 × FTA)).</p>`+table(['#','Player','Team','GP','MPG','Game Score / game','Total Game Score','PPG','RPG','APG','TS%'],rows,'Impact player leaderboard')+`<p class="muted small impact-note">Game Score = PTS + 0.4 FGM − 0.7 FGA − 0.4 (FTA − FTM) + 0.7 OREB + 0.3 DREB + STL + 0.7 AST + 0.7 BLK − 0.4 PF − TOV. Box-score estimates do not capture every contribution. <a href="https://www.basketball-reference.com/about/glossary.html" target="_blank" rel="noopener noreferrer">Metric glossary ↗</a></p>`;
+  const rows=ordered.slice(0,20).map((p,i)=>row([`<span class="rank">${String(i+1).padStart(2,'0')}</span>`,`<button class="player-link" data-player="${esc(p.id)}">${playerPhoto(p)}<span><strong>${esc(p.name)}</strong><small>Season profile ↗</small></span></button>`,`<a href="${teamLink(p.team)}">${esc(p.team)}</a>`,p.gp,fmt(p.mpg),fmt(p.game_score,2),fmt(p.total_game_score,1),fmt(p.ppg),fmt(p.rpg),fmt(p.apg),num(p.ts)?`${fmt(p.ts*100,1)}%`:'—']));
+  $('#content').innerHTML=heading('Impact players','SEASON BOX-SCORE PRODUCTION',`<label class="impact-sort">Rank by <select id="impact-sort"><option value="average">Game Score / game</option><option value="total">Total Game Score</option></select></label>`)+`<div class="impact-intro"><div><span class="impact-kicker">01 / THE BOX SCORE LENS</span><h3>Production, in context.</h3><p>Game Score summarizes box-score production; it is not a causal measure of impact on winning. It misses off-ball play, defense beyond recorded events, teammates and opponents. Small early-season samples are volatile.</p></div><div class="impact-meta"><span>DATA THROUGH <strong>${esc(playerStats.through)}</strong></span><span>BOX SCORES <strong>${playerStats.games_collected} / ${playerStats.season_games}</strong></span><span>SOURCE <strong>ESPN</strong></span></div></div><p class="muted small">Minimum 3 games · Top 20 · Game Score per game ranks average production; total rewards availability. TS% = points / (2 × (FGA + 0.44 × FTA)).</p>`+table(['#','Player','Team','GP','MPG','Game Score / game','Total Game Score','PPG','RPG','APG','TS%'],rows,'Impact player leaderboard')+`<p class="muted small impact-note">Game Score = PTS + 0.4 FGM − 0.7 FGA − 0.4 (FTA − FTM) + 0.7 OREB + 0.3 DREB + STL + 0.7 AST + 0.7 BLK − 0.4 PF − TOV. Box-score estimates do not capture every contribution. <a href="https://www.basketball-reference.com/about/glossary.html" target="_blank" rel="noopener noreferrer">Metric glossary ↗</a></p>`;
+  $('#content').insertAdjacentHTML('beforeend', '<dialog id="player-detail" aria-labelledby="player-name"><div id="player-detail-body"></div></dialog>');
+  bindPlayerPhotos();
+  document.querySelectorAll('[data-player]').forEach(button=>button.onclick=()=>openPlayerDetail(playerStats.players.find(p=>String(p.id)===button.dataset.player)));
   $('#impact-sort').value=mode;$('#impact-sort').onchange=e=>{state.impactSort=e.target.value;impactView();};
 }
 async function exportPNG(){
